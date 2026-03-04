@@ -1,0 +1,139 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+
+@theme {
+  --color-brand-bg: var(--bg-primary);
+  --color-brand-text: var(--text-primary);
+  --color-brand-muted: var(--text-secondary);
+  --color-brand-accent: #00D1FF;
+  --color-brand-secondary: #9333ea;
+  --color-brand-glass: var(--glass-bg);
+  --color-brand-border: var(--border-primary);
+
+  --font-syncopate: "Syncopate", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+
+
+:root {
+  --bg-primary: #050505;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.6);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --border-primary: rgba(255, 255, 255, 0.1);
+  --glass-frosted: rgba(255, 255, 255, 0.1);
+}
+
+:root.light {
+  --bg-primary: #f8fafc;
+  --text-primary: #050505;
+  --text-secondary: rgba(0, 0, 0, 0.6);
+  --glass-bg: rgba(0, 0, 0, 0.03);
+  --border-primary: rgba(0, 0, 0, 0.08);
+  --glass-frosted: rgba(0, 0, 0, 0.05);
+}
+
+
+@layer base {
+  body {
+    @apply bg-brand-bg text-brand-text font-inter antialiased overflow-x-hidden transition-colors duration-300;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-syncopate font-bold uppercase tracking-wider text-brand-text;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-brand-glass border border-brand-border backdrop-blur-xl;
+  }
+
+  .glass-frosted {
+    @apply bg-[var(--glass-frosted)] backdrop-blur-md;
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 15px rgba(0, 209, 255, 0.3);
+  }
+
+  .neon-border-hover:hover {
+    @apply border-brand-accent/50;
+    box-shadow: 0 0 15px rgba(0, 209, 255, 0.3);
+  }
+
+  .color-flex-border {
+    position: relative;
+    border: 1px solid transparent;
+    background: linear-gradient(var(--bg-primary), var(--bg-primary)) padding-box,
+      linear-gradient(to right, #00d1ff, #9333ea, #ff00ea, #00d1ff) border-box;
+    background-size: 200% 100%;
+    animation: border-flex 4s linear infinite;
+  }
+
+  .color-flex-border-shimmer {
+    position: relative;
+    border: 2px solid transparent;
+    background: linear-gradient(var(--bg-primary), var(--bg-primary)) padding-box,
+      linear-gradient(to right, #00d1ff, #9333ea, #ff00ea, #00d1ff) border-box;
+    background-size: 200% 100%;
+    animation: border-flex 2s linear infinite;
+    box-shadow: 0 0 30px rgba(0, 209, 255, 0.2);
+  }
+
+  @keyframes border-flex {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    100% {
+      background-position: 200% 50%;
+    }
+  }
+
+  .color-flex-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#00d1ff] via-[#9333ea] to-[#ff00ea];
+    background-size: 200% 100%;
+    animation: border-flex 4s linear infinite;
+  }
+
+  .bg-blueprint {
+    background-image:
+      linear-gradient(var(--border-primary) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border-primary) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .bg-tech-grid {
+    background-image: radial-gradient(var(--border-primary) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
+
+
+/* Custom animations for background blobs */
+@keyframes blob-move {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+.animate-blob {
+  animation: blob-move 10s infinite alternate cubic-bezier(0.45, 0, 0.55, 1);
+}
