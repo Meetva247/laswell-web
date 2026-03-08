@@ -41,8 +41,8 @@ const ServiceSection = ({ title, subtitle, description, highlights, specs, icon:
                             <Icon size={28} />
                         </div>
                         <div>
-                            <h2 className="text-2xl md:text-3xl font-syncopate font-bold uppercase">{title}</h2>
-                            <p className="text-brand-accent text-[10px] font-mono uppercase tracking-[0.4em] mt-1">{subtitle}</p>
+                            <h2 className="text-2xl md:text-3xl font-display font-bold uppercase">{title}</h2>
+                            <p className="text-brand-accent text-[10px] font-mono tracking-[0.4em] mt-1">{subtitle}</p>
                         </div>
                     </div>
 
@@ -54,18 +54,18 @@ const ServiceSection = ({ title, subtitle, description, highlights, specs, icon:
                         {highlights.map((highlight, i) => (
                             <div key={i} className="flex items-start gap-3">
                                 <CheckCircle2 size={16} className="text-brand-accent mt-1 shrink-0" />
-                                <span className="text-xs text-brand-muted uppercase tracking-wider">{highlight}</span>
+                                <span className="text-xs text-brand-muted tracking-wider">{highlight}</span>
                             </div>
                         ))}
                     </div>
 
                     <div className="bg-brand-bg/50 border border-brand-border p-6 rounded-sm">
-                        <h3 className="text-[10px] font-syncopate font-bold uppercase tracking-widest mb-4 pb-2 border-b border-brand-border text-brand-accent">Technical Specs</h3>
+                        <h3 className="text-[10px] font-display font-bold uppercase tracking-widest mb-4 pb-2 border-b border-brand-border text-brand-accent">Technical Specs</h3>
                         <div className="grid grid-cols-2 gap-x-8 gap-y-4">
                             {Object.entries(specs).map(([key, value]) => (
                                 <div key={key}>
-                                    <dt className="text-[9px] font-mono uppercase tracking-wider text-brand-muted mb-1">{key}</dt>
-                                    <dd className="text-[11px] font-bold text-brand-text uppercase tracking-tight font-mono">{value}</dd>
+                                    <dt className="text-[9px] font-mono tracking-wider text-brand-muted mb-1">{key}</dt>
+                                    <dd className="text-[11px] font-bold text-brand-text tracking-tight font-mono">{value}</dd>
                                 </div>
                             ))}
                         </div>
@@ -101,13 +101,13 @@ const ServicesPage = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         className="inline-block px-4 py-1 border border-brand-accent/20 bg-brand-accent/5 rounded-full mb-6"
                     >
-                        <span className="text-[10px] font-mono uppercase tracking-[0.5em] text-brand-accent font-bold">Comprehensive Capabilities</span>
+                        <span className="text-[10px] font-mono tracking-[0.5em] text-brand-accent font-bold">Comprehensive Capabilities</span>
                     </motion.div>
 
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-4xl md:text-7xl font-syncopate font-bold mb-8 uppercase"
+                        className="text-3xl md:text-5xl font-display font-bold mb-8 uppercase"
                     >
                         Our <span className="text-brand-accent">Services</span>
                     </motion.h1>
@@ -265,7 +265,7 @@ const ServicesPage = () => {
                     >
                         <div className="flex items-center gap-3 mb-8">
                             <ShieldCheck className="text-brand-accent" size={24} />
-                            <h3 className="text-xl font-syncopate font-bold uppercase">Why choose Laswell</h3>
+                            <h3 className="text-xl font-display font-bold uppercase">Why choose Laswell</h3>
                         </div>
                         <ul className="space-y-6">
                             {[
@@ -277,7 +277,7 @@ const ServicesPage = () => {
                                     <div className="w-6 h-6 rounded-full bg-brand-accent/10 flex items-center justify-center shrink-0 mt-1">
                                         <span className="text-[10px] text-brand-accent font-bold">{i + 1}</span>
                                     </div>
-                                    <span className="text-brand-muted text-xs uppercase tracking-tight">{text}</span>
+                                    <span className="text-brand-muted text-xs tracking-tight">{text}</span>
                                 </li>
                             ))}
                         </ul>
@@ -291,7 +291,7 @@ const ServicesPage = () => {
                     >
                         <div className="flex items-center gap-3 mb-8">
                             <Zap className="text-brand-accent" size={24} />
-                            <h3 className="text-xl font-syncopate font-bold uppercase">Engagement models</h3>
+                            <h3 className="text-xl font-display font-bold uppercase">Engagement models</h3>
                         </div>
                         <ul className="space-y-4">
                             {[
@@ -300,7 +300,7 @@ const ServicesPage = () => {
                                 { label: "NDA & IP", desc: "Full IP assignment available" }
                             ].map((row, i) => (
                                 <div key={i} className="flex justify-between items-center py-4 border-b border-brand-border last:border-0">
-                                    <span className="font-bold text-brand-text uppercase text-xs tracking-widest">{row.label}</span>
+                                    <span className="font-bold text-brand-text text-xs tracking-widest">{row.label}</span>
                                     <span className="text-brand-muted text-xs font-mono">{row.desc}</span>
                                 </div>
                             ))}
@@ -315,7 +315,7 @@ const ServicesPage = () => {
                     viewport={{ once: true }}
                     className="mt-24 text-center glass border border-brand-accent/20 p-16 rounded-sm bg-gradient-to-b from-brand-accent/5 to-transparent"
                 >
-                    <h2 className="text-3xl md:text-4xl font-syncopate font-bold mb-8 uppercase">Ready to Start?</h2>
+                    <h2 className="text-2xl md:text-3xl font-display font-bold mb-8 uppercase">Ready to Start?</h2>
                     <motion.button
                         whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(0, 209, 255, 0.3)" }}
                         whileTap={{ scale: 0.95 }}

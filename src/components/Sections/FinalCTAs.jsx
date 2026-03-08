@@ -8,7 +8,7 @@ const CTASection = ({ title, description, badge, buttonText, link, icon: Icon, i
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className={`relative group p-8 md:p-12 border border-brand-border glass rounded-sm overflow-hidden flex flex-col justify-between h-full ${isSecondary ? 'bg-brand-accent/5 border-brand-accent/20' : ''
+        className={`relative group p-8 md:p-12 border border-brand-border glass rounded-sm overflow-hidden flex flex-col justify-between h-full ${isSecondary ? 'bg-brand-fusion/5 border-brand-fusion/20' : 'bg-brand-secondary/5 border-brand-secondary/20'
             }`}
     >
         {/* Decorative Background Elements */}
@@ -18,21 +18,22 @@ const CTASection = ({ title, description, badge, buttonText, link, icon: Icon, i
 
         <div className="relative z-10">
             <div className="flex items-center gap-3 mb-6">
-                <div className={`w-10 h-10 rounded-sm flex items-center justify-center border ${isSecondary ? 'bg-brand-accent text-brand-bg border-brand-accent' : 'bg-brand-accent/10 text-brand-accent border-brand-accent/20'
+                <div className={`w-10 h-10 rounded-sm flex items-center justify-center border ${isSecondary ? 'bg-brand-fusion text-brand-bg border-brand-fusion' : 'bg-brand-secondary text-brand-bg border-brand-secondary'
                     }`}>
                     <Icon size={20} />
                 </div>
                 {badge && (
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] px-2 py-1 bg-brand-accent/20 text-brand-accent rounded-xs">
+                    <span className={`text-[10px] font-mono font-bold uppercase tracking-[0.2em] px-2 py-1 rounded-xs ${isSecondary ? 'bg-brand-fusion/20 text-brand-fusion' : 'bg-brand-secondary/20 text-brand-secondary'
+                        }`}>
                         {badge}
                     </span>
                 )}
             </div>
 
-            <h3 className="text-2xl md:text-3xl font-syncopate font-bold uppercase mb-4 leading-tight">
+            <h3 className="text-2xl md:text-3xl font-display font-bold uppercase mb-4 leading-tight">
                 {title}
             </h3>
-            <p className="text-brand-muted text-sm md:text-base font-mono uppercase tracking-tight leading-relaxed mb-8 max-w-sm">
+            <p className="text-brand-muted text-sm md:text-base font-mono tracking-tight leading-relaxed mb-8 max-w-sm">
                 {description}
             </p>
         </div>
@@ -43,8 +44,8 @@ const CTASection = ({ title, description, badge, buttonText, link, icon: Icon, i
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className={`w-full py-4 font-bold uppercase tracking-[0.3em] text-xs flex items-center justify-center gap-3 rounded-sm transition-all ${isSecondary
-                            ? 'bg-transparent border border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-brand-bg'
-                            : 'bg-brand-accent text-brand-bg shadow-lg shadow-brand-accent/20'
+                            ? 'bg-transparent border border-brand-fusion text-brand-fusion hover:bg-brand-fusion hover:text-brand-bg'
+                            : 'bg-brand-secondary text-brand-bg shadow-lg shadow-brand-secondary/20'
                         }`}
                 >
                     {buttonText}
@@ -91,7 +92,7 @@ const FinalCTAs = () => {
                     </div>
                     <div className="flex items-center gap-2">
                         <Zap size={12} className="text-brand-accent" />
-                        <span className="text-[10px] font-mono text-brand-muted uppercase tracking-[0.2em] italic underline decoration-brand-accent/50 underline-offset-4 cursor-default">InkVibe x Laswell Technical Standards</span>
+                        <span className="text-[10px] font-mono text-brand-muted uppercase tracking-[0.2em] italic underline decoration-brand-accent/50 underline-offset-4 cursor-default">Laswell Technical Standards</span>
                     </div>
                 </div>
             </div>

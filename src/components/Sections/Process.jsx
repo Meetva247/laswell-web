@@ -24,15 +24,15 @@ const StepCard = ({ number, title, description, icon: Icon, index }) => (
                 </div>
 
                 {/* Step Number Badge */}
-                <div className="absolute -top-3 -right-3 w-8 h-8 bg-brand-accent text-brand-bg font-syncopate font-bold text-[10px] flex items-center justify-center rounded-sm shadow-lg">
+                <div className="absolute -top-3 -right-3 w-8 h-8 bg-brand-accent text-brand-bg font-display font-bold text-[10px] flex items-center justify-center rounded-sm shadow-lg">
                     {number}
                 </div>
             </div>
 
-            <h3 className="text-lg font-syncopate font-bold uppercase mb-3 tracking-tight group-hover:text-brand-accent transition-colors">
+            <h3 className="text-lg font-display font-bold uppercase mb-3 tracking-tight group-hover:text-brand-accent transition-colors">
                 {title}
             </h3>
-            <p className="text-brand-muted text-xs font-mono uppercase tracking-tight leading-relaxed max-w-[200px]">
+            <p className="text-brand-muted text-xs font-mono tracking-tight leading-relaxed max-w-[200px]">
                 {description}
             </p>
         </div>
@@ -99,7 +99,7 @@ const Process = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-6xl font-syncopate font-bold uppercase mb-6"
+                        className="text-3xl md:text-4xl font-display font-bold uppercase mb-6"
                     >
                         How We <span className="text-brand-accent">Work</span>
                     </motion.h2>
@@ -108,7 +108,7 @@ const Process = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-brand-muted max-w-xl text-sm font-mono uppercase tracking-tight"
+                        className="text-brand-muted max-w-xl text-sm font-mono tracking-tight"
                     >
                         From initial concept to final component delivery, our process is engineered for speed, accuracy, and uncompromising quality.
                     </motion.p>
@@ -129,7 +129,7 @@ const Process = () => {
                     className="mt-24 text-center"
                 >
                     <a href="#custom" className="inline-flex items-center gap-4 group">
-                        <span className="text-xs font-mono uppercase tracking-widest text-brand-muted group-hover:text-brand-accent transition-colors italic">Ready to start step 01?</span>
+                        <span className="text-xs font-mono tracking-widest text-brand-muted group-hover:text-brand-accent transition-colors italic">Ready to start step 01?</span>
                         <div className="w-10 h-10 rounded-full border border-brand-accent/30 flex items-center justify-center text-brand-accent group-hover:bg-brand-accent group-hover:text-brand-bg transition-all">
                             <ArrowRight size={16} />
                         </div>

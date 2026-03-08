@@ -6,6 +6,9 @@ import ScrollToTop from './components/UI/ScrollToTop'
 import HomePage from './pages/HomePage'
 import ServicesPage from './pages/ServicesPage'
 import ShopPage from './pages/ShopPage'
+import BuildPage from './pages/BuildPage'
+import AuthPage from './pages/AuthPage'
+import ProfilePage from './pages/ProfilePage'
 
 function App() {
   return (
@@ -20,12 +23,15 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/shop" element={<ShopPage />} />
+          <Route path="/build" element={<BuildPage />} />
+          <Route path="/auth" element={<AuthPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
 
 
         <footer className="py-12 border-t border-brand-border text-center">
           <p className="text-[10px] uppercase tracking-[0.5em] text-brand-muted font-bold">
-            © 2026 INKVIBE X LASWELL // ALL RIGHTS RESERVED
+            © 2026 LASWELL // ALL RIGHTS RESERVED
           </p>
         </footer>
       </main>

@@ -26,20 +26,20 @@ const AboutFeature = ({ icon: Icon, title, description, index }) => (
             <Icon size={20} />
         </div>
         <div>
-            <h3 className="text-[10px] font-syncopate font-bold uppercase mb-1 tracking-wider">{title}</h3>
-            <p className="text-brand-muted text-[10px] leading-relaxed uppercase tracking-tight font-mono">{description}</p>
+            <h3 className="text-[10px] font-display font-bold uppercase mb-1 tracking-wider">{title}</h3>
+            <p className="text-brand-muted text-[10px] leading-relaxed tracking-tight font-mono">{description}</p>
         </div>
     </motion.div>
 );
 
 const InfoList = ({ title, items }) => (
     <div className="space-y-4">
-        <h4 className="text-xs font-syncopate font-bold uppercase tracking-[0.2em] text-brand-accent border-b border-brand-accent/20 pb-2">{title}</h4>
+        <h4 className="text-xs font-display font-bold uppercase tracking-[0.2em] text-brand-accent border-b border-brand-accent/20 pb-2">{title}</h4>
         <ul className="space-y-2">
             {items.map((item, i) => (
                 <li key={i} className="flex items-center gap-2 group cursor-default">
                     <ChevronRight size={12} className="text-brand-accent/40 group-hover:text-brand-accent transition-colors" />
-                    <span className="text-[10px] font-mono uppercase tracking-tight text-brand-muted group-hover:text-brand-text transition-colors">{item}</span>
+                    <span className="text-[10px] font-mono tracking-tight text-brand-muted group-hover:text-brand-text transition-colors">{item}</span>
                 </li>
             ))}
         </ul>
@@ -71,10 +71,10 @@ const About = () => {
                         className="flex items-center gap-4 mb-6"
                     >
                         <div className="h-[2px] w-12 bg-gradient-to-r from-brand-accent to-brand-vibrant" />
-                        <span className="text-[10px] font-mono uppercase tracking-[0.6em] color-flex-text font-bold">Start Your Project</span>
+                        <span className="text-[10px] font-mono uppercase tracking-[0.6em] text-brand-accent font-bold">Start Your Project</span>
                     </motion.div>
-                    <h2 className="text-3xl md:text-5xl font-syncopate font-bold uppercase mb-4 max-w-2xl leading-tight">
-                        Ready to bring your <span className="color-flex-text text-2xl md:text-4xl">Ideas to Life?</span>
+                    <h2 className="text-2xl md:text-4xl font-display font-bold uppercase mb-4 max-w-2xl leading-tight">
+                        Ready to bring your <span className="text-brand-accent text-2xl md:text-4xl">Ideas to Life?</span>
                     </h2>
                     <p className="text-brand-muted font-mono uppercase text-xs tracking-widest italic">Get in touch with our team today.</p>
 
@@ -94,11 +94,11 @@ const About = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                             >
-                                <h3 className="text-xl font-syncopate font-bold uppercase mb-8 border-l-4 border-brand-accent pl-6 group relative overflow-hidden">
+                                <h3 className="text-xl font-display font-bold uppercase mb-8 border-l-4 border-brand-accent pl-6 group relative overflow-hidden">
                                     <div className="absolute inset-0 bg-gradient-to-r from-brand-accent/10 to-transparent translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700" />
                                     About Us
                                 </h3>
-                                <div className="space-y-6 text-brand-text/80 font-mono text-sm leading-relaxed uppercase tracking-tight">
+                                <div className="space-y-6 text-brand-text/80 font-mono text-sm leading-relaxed tracking-tight">
                                     <p>
                                         Laswell Robotics is a leading provider of on-demand manufacturing, robotics, and automation services. We transform innovative ideas into reality through precision engineering and modern fabrication technology.
                                     </p>
@@ -180,7 +180,7 @@ const About = () => {
                             <div className="absolute top-0 right-0 w-[4px] h-full bg-brand-vibrant translate-y-full group-hover:translate-y-0 transition-transform duration-700" />
 
                             <div className="relative z-10">
-                                <h3 className="text-xl font-syncopate font-bold uppercase mb-8 tracking-widest group-hover:color-flex-text transition-colors">Get in Touch</h3>
+                                <h3 className="text-xl font-display font-bold uppercase mb-8 tracking-widest text-brand-accent transition-colors">Get in Touch</h3>
 
                                 <div className="space-y-6 mb-12">
                                     <div className="flex items-center gap-4 group/contact">

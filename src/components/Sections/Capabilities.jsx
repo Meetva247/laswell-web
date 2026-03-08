@@ -18,8 +18,8 @@ const EdgeCard = ({ icon: Icon, title, description, index }) => (
         <div className="w-14 h-14 bg-brand-accent/5 rounded-sm flex items-center justify-center text-brand-accent mb-6 border border-brand-accent/10 group-hover:scale-110 transition-transform duration-500">
             <Icon size={28} />
         </div>
-        <h3 className="text-xl font-syncopate font-bold uppercase mb-4 tracking-tight">{title}</h3>
-        <p className="text-brand-muted text-sm leading-relaxed uppercase tracking-tighter font-mono">
+        <h3 className="text-xl font-display font-bold uppercase mb-4 tracking-tight">{title}</h3>
+        <p className="text-brand-muted text-sm leading-relaxed tracking-tighter font-mono">
             {description}
         </p>
 
@@ -36,10 +36,10 @@ const StatItem = ({ value, label, index }) => (
         transition={{ delay: index * 0.1 }}
         className="text-center p-8 border-r border-brand-border last:border-r-0"
     >
-        <div className="text-4xl md:text-5xl font-syncopate font-bold text-brand-accent mb-2 tracking-tighter">
+        <div className="text-4xl md:text-5xl font-display font-bold text-brand-accent mb-2 tracking-tighter">
             {value}
         </div>
-        <div className="text-[10px] md:text-xs font-mono uppercase tracking-[0.3em] text-brand-muted font-bold">
+        <div className="text-[10px] md:text-xs font-mono tracking-[0.3em] text-brand-muted font-bold">
             {label}
         </div>
     </motion.div>
@@ -84,13 +84,13 @@ const Capabilities = () => {
                     <div>
                         <div className="flex items-center gap-4 mb-4">
                             <div className="h-[1px] w-12 bg-brand-accent" />
-                            <span className="text-[10px] font-mono uppercase tracking-[0.5em] text-brand-accent font-bold">Value Proposition</span>
+                            <span className="text-[10px] font-mono tracking-[0.5em] text-brand-accent font-bold">Value Proposition</span>
                         </div>
-                        <h2 className="text-4xl md:text-6xl font-syncopate font-bold uppercase tracking-tight">
+                        <h2 className="text-3xl md:text-4xl font-display font-bold uppercase tracking-tight">
                             Our <span className="text-brand-accent">Edge</span>
                         </h2>
                     </div>
-                    <p className="text-brand-muted max-w-sm text-sm uppercase tracking-tight font-mono leading-relaxed">
+                    <p className="text-brand-muted max-w-sm text-sm tracking-tight font-mono leading-relaxed">
                         Propelling hardware innovation through rigorous design standards and high-fidelity production pipelines.
                     </p>
                 </div>
@@ -107,7 +107,7 @@ const Capabilities = () => {
                     <div className="absolute inset-0 bg-brand-accent/5 blur-3xl opacity-20" />
                     <div className="relative glass border border-brand-border rounded-sm overflow-hidden">
                         <div className="p-4 border-b border-brand-border bg-white/[0.02] flex items-center justify-between px-8">
-                            <span className="text-[10px] font-mono uppercase tracking-widest text-brand-muted">Operational Metrics // Alpha-01</span>
+                            <span className="text-[10px] font-mono tracking-widest text-brand-muted">Operational Metrics // Alpha-01</span>
                             <div className="flex gap-2">
                                 <div className="w-2 h-2 rounded-full bg-brand-accent/20" />
                                 <div className="w-2 h-2 rounded-full bg-brand-accent/40" />

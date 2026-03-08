@@ -30,8 +30,8 @@ const ShopCategory = ({ title, description, image, index }) => (
 
         {/* Content */}
         <div className="absolute inset-0 p-6 flex flex-col justify-end z-10">
-            <h3 className="text-lg font-syncopate font-bold uppercase mb-1">{title}</h3>
-            <p className="text-[10px] text-brand-muted uppercase tracking-widest font-mono group-hover:text-brand-accent transition-colors">
+            <h3 className="text-lg font-display font-bold uppercase mb-1">{title}</h3>
+            <p className="text-[10px] text-brand-muted tracking-widest font-mono group-hover:text-brand-accent transition-colors">
                 {description}
             </p>
         </div>
@@ -48,7 +48,7 @@ const FeatureCard = ({ icon: Icon, title, description }) => (
         <div className="w-16 h-16 bg-brand-accent/5 rounded-sm flex items-center justify-center mb-6 text-brand-accent border border-brand-accent/10 group-hover:scale-110 transition-transform">
             <Icon size={32} />
         </div>
-        <h4 className="text-lg font-syncopate font-bold uppercase mb-4">{title}</h4>
+        <h4 className="text-lg font-display font-bold uppercase mb-4">{title}</h4>
         <p className="text-brand-muted text-sm leading-relaxed max-w-[250px]">
             {description}
         </p>
@@ -82,13 +82,13 @@ const ShopPage = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         className="relative z-10"
                     >
-                        <span className="inline-block px-4 py-1 bg-brand-accent/10 text-brand-accent border border-brand-accent/20 rounded-full text-[10px] font-mono uppercase tracking-[0.5em] mb-8 font-bold animate-pulse">
+                        <span className="inline-block px-4 py-1 bg-brand-accent/10 text-brand-accent border border-brand-accent/20 rounded-full text-[10px] font-mono tracking-[0.5em] mb-8 font-bold animate-pulse">
                             Coming Soon
                         </span>
-                        <h1 className="text-4xl md:text-7xl font-syncopate font-bold mb-6 uppercase tracking-tighter">
+                        <h1 className="text-3xl md:text-5xl font-display font-bold mb-6 uppercase tracking-tighter">
                             Robotics & <span className="text-brand-accent">Electronics</span> Store
                         </h1>
-                        <p className="text-brand-muted max-w-2xl mx-auto text-lg md:text-xl font-mono tracking-tight leading-relaxed mb-12">
+                        <p className="text-brand-muted max-w-2xl mx-auto text-base md:text-lg font-mono tracking-tight leading-relaxed mb-12">
                             Your one-stop shop for robotics components, electronics, and maker supplies. We're curating the world's finest engineering components.
                         </p>
 
@@ -115,8 +115,8 @@ const ShopPage = () => {
             {/* Category Grid */}
             <div className="max-w-7xl mx-auto px-6 mb-32">
                 <div className="flex items-center justify-between mb-12 border-b border-brand-border pb-6">
-                    <h2 className="text-2xl font-syncopate font-bold uppercase">Preview Categories</h2>
-                    <div className="flex items-center gap-2 text-brand-muted text-[10px] uppercase tracking-widest font-mono">
+                    <h2 className="text-2xl font-display font-bold uppercase">Preview Categories</h2>
+                    <div className="flex items-center gap-2 text-brand-muted text-[10px] tracking-widest font-mono">
                         <span>Scroll to Explore</span>
                         <ArrowRight size={12} className="text-brand-accent" />
                     </div>
@@ -131,7 +131,7 @@ const ShopPage = () => {
 
             {/* Value Propositions */}
             <div className="max-w-7xl mx-auto px-6 mb-24">
-                <h2 className="text-3xl font-syncopate font-bold uppercase mb-16 text-center">What to <span className="text-brand-accent">Expect</span></h2>
+                <h2 className="text-3xl font-display font-bold uppercase mb-16 text-center">What to <span className="text-brand-accent">Expect</span></h2>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <FeatureCard
                         icon={Truck}
@@ -160,7 +160,7 @@ const ShopPage = () => {
             <div className="max-w-3xl mx-auto px-6 text-center">
                 <div className="glass border border-brand-border p-12 rounded-sm relative overflow-hidden">
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-accent to-transparent" />
-                    <h3 className="text-xl font-syncopate font-bold uppercase mb-4">Want Early Access?</h3>
+                    <h3 className="text-xl font-display font-bold uppercase mb-4">Want Early Access?</h3>
                     <p className="text-brand-muted text-sm font-mono mb-8">Join the waitlist for exclusive discounts and beta tester privileges.</p>
                     <div className="flex gap-2">
                         <input

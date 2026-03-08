@@ -99,13 +99,13 @@ const ServiceCard = ({ service }) => {
                     </div>
                 </div>
 
-                <h3 className="text-xl font-syncopate font-bold mb-3 group-hover:text-brand-accent transition-colors uppercase">
+                <h3 className="text-xl font-display font-bold mb-3 group-hover:text-brand-accent transition-colors uppercase">
                     {service.title}
                 </h3>
 
                 <ul className="space-y-1.5 mb-6">
                     {service.specs.slice(0, 3).map((spec, i) => (
-                        <li key={i} className="flex items-center gap-2 text-[10px] font-mono text-brand-muted uppercase tracking-widest whitespace-nowrap">
+                        <li key={i} className="flex items-center gap-2 text-[10px] font-mono text-brand-muted tracking-widest whitespace-nowrap">
                             <span className="w-1 h-1 bg-brand-accent/40 rounded-full" />
                             {spec}
                         </li>
@@ -144,7 +144,7 @@ const ServicesGrid = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-4xl md:text-6xl font-syncopate font-bold mb-6"
+                    className="text-4xl md:text-6xl font-display font-bold mb-6"
                 >
                     Engineering <span className="text-brand-accent">Excellence</span>
                 </motion.h2>
@@ -154,7 +154,7 @@ const ServicesGrid = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
-                    className="text-brand-muted max-w-2xl text-lg uppercase font-mono tracking-tight"
+                    className="text-brand-muted max-w-2xl text-lg font-mono tracking-tight"
                 >
                     Precision manufacturing and high-performance design pipeline running in continuous synchronization.
                 </motion.p>

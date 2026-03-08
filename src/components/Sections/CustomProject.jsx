@@ -4,7 +4,7 @@ import { Send, Cpu, Layers, MousePointer2 } from 'lucide-react';
 
 const CustomProject = () => {
     const logos = [
-        'LASWELL', 'INKVIBE', 'ROBOCON', 'STEELWORKS', 'NEURALINK', 'VORTEX'
+        'LASWELL', 'ROBOCON', 'STEELWORKS', 'NEURALINK', 'VORTEX', 'AEROFORM'
     ];
 
     return (
@@ -38,7 +38,7 @@ const CustomProject = () => {
                     </div>
                 </div>
 
-                <div className="glass p-8 md:p-12 relative rounded-sm color-flex-border-shimmer overflow-hidden">
+                <div className="glass-card p-8 md:p-12 relative rounded-sm overflow-hidden">
                     {/* Internal Corner Accents for technical depth */}
                     <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-brand-accent/40" />
                     <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-brand-accent/40" />
@@ -69,7 +69,7 @@ const CustomProject = () => {
                         </div>
 
                         <motion.button
-                            whileHover={{ scale: 1.02, boxShadow: "0 10px 30px -10px rgba(0, 209, 255, 0.5)" }}
+                            whileHover={{ scale: 1.02, boxShadow: "0 10px 30px -10px rgba(0, 247, 255, 0.5)" }}
                             whileTap={{ scale: 0.98 }}
                             className="w-full py-4 bg-brand-accent text-brand-bg font-bold uppercase tracking-widest flex items-center justify-center gap-3 rounded-sm"
                         >
@@ -87,7 +87,7 @@ const CustomProject = () => {
                     className="flex gap-20 items-center px-10"
                 >
                     {[...logos, ...logos].map((logo, i) => (
-                        <span key={i} className="text-2xl font-syncopate font-bold text-brand-text/10 hover:text-brand-text/20 transition-colors tracking-tighter cursor-default">
+                        <span key={i} className="text-2xl font-display font-bold text-brand-text/10 hover:text-brand-text/20 transition-colors tracking-tighter cursor-default">
                             {logo}
                         </span>
                     ))}
@@ -101,7 +101,7 @@ const CustomProject = () => {
                 <div className="flex gap-2 p-1 glass rounded-sm">
                     <input
                         type="email"
-                        placeholder="operator@inkvibe.io"
+                        placeholder="operator@laswell.io"
                         className="flex-1 bg-transparent px-4 py-2 outline-none text-brand-text text-sm"
                     />
                     <button className="bg-brand-text text-brand-bg hover:opacity-90 px-8 py-2 text-xs font-bold uppercase tracking-widest transition-opacity rounded-sm">

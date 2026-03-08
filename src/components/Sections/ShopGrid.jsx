@@ -36,7 +36,7 @@ const ShopItem = ({ item }) => {
             {/* "Coming Soon" Overlay */}
             <div className="absolute inset-0 z-20 glass-frosted opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-6 text-center">
                 <div className="border border-white/20 p-4">
-                    <span className="text-xs font-syncopate uppercase tracking-widest font-bold">Stocking Soon</span>
+                    <span className="text-xs font-display uppercase tracking-widest font-bold">Stocking Soon</span>
                 </div>
             </div>
 
