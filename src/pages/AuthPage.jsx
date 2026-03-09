@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import {
     User,
     Mail,
@@ -14,7 +14,7 @@ import {
 
 const AuthInput = ({ icon: Icon, type, placeholder, value, onChange, label }) => (
     <div className="mb-6">
-        <label className="block text-[10px] font-mono uppercase tracking-[0.3em] text-brand-muted mb-2 ml-1">
+        <label className="block text-[10px] font-bold uppercase tracking-[0.1em] text-brand-muted mb-2 ml-1">
             {label}
         </label>
         <div className="relative group">
@@ -26,7 +26,7 @@ const AuthInput = ({ icon: Icon, type, placeholder, value, onChange, label }) =>
                 placeholder={placeholder}
                 value={value}
                 onChange={onChange}
-                className="w-full bg-brand-bg/50 border border-brand-border px-12 py-4 text-sm font-mono focus:border-brand-accent outline-none transition-all rounded-sm placeholder:text-brand-muted/30"
+                className="w-full bg-brand-bg/50 border border-brand-border px-12 py-4 text-xs font-bold uppercase tracking-[0.1em] focus:border-brand-accent outline-none transition-all rounded-sm placeholder:text-brand-muted/30"
                 required
             />
             <div className="absolute inset-x-0 bottom-0 h-[1px] bg-brand-accent scale-x-0 group-focus-within:scale-x-100 transition-transform duration-500" />
@@ -35,7 +35,17 @@ const AuthInput = ({ icon: Icon, type, placeholder, value, onChange, label }) =>
 );
 
 const AuthPage = () => {
+    const location = useLocation();
     const [isLogin, setIsLogin] = useState(true);
+
+    useEffect(() => {
+        if (location.state?.isSignup) {
+            setIsLogin(false);
+        } else {
+            setIsLogin(true);
+        }
+    }, [location]);
+
     const [formData, setFormData] = useState({
         name: '',
         username: '',
@@ -43,7 +53,7 @@ const AuthPage = () => {
         role: 'Student',
         otherRole: '',
         password: '',
-        confirmPassword: ''
+        changePassword: ''
     });
     const navigate = useNavigate();
 
@@ -113,8 +123,16 @@ const AuthPage = () => {
                                             value={formData.name}
                                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                         />
+                                        <AuthInput
+                                            label="Email"
+                                            icon={Mail}
+                                            type="email"
+                                            placeholder="AUTH@LASWELL.COM"
+                                            value={formData.email}
+                                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                        />
                                         <div className="mb-6">
-                                            <label className="block text-[10px] font-mono uppercase tracking-[0.3em] text-brand-muted mb-2 ml-1">
+                                            <label className="block text-[10px] font-bold uppercase tracking-[0.1em] text-brand-muted mb-2 ml-1">
                                                 Role / Position
                                             </label>
                                             <div className="relative group">
@@ -124,7 +142,7 @@ const AuthPage = () => {
                                                 <select
                                                     value={formData.role}
                                                     onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                                                    className="w-full bg-brand-bg/50 border border-brand-border px-12 py-4 text-sm font-mono focus:border-brand-accent outline-none transition-all rounded-sm appearance-none"
+                                                    className="w-full bg-brand-bg/50 border border-brand-border px-12 py-4 text-xs font-bold uppercase tracking-[0.1em] focus:border-brand-accent outline-none transition-all rounded-sm appearance-none"
                                                 >
                                                     <option value="Student">Student</option>
                                                     <option value="Job person">Job person</option>
@@ -145,14 +163,16 @@ const AuthPage = () => {
                                         )}
                                     </>
                                 )}
-                                <AuthInput
-                                    label="Email Address"
-                                    icon={Mail}
-                                    type="email"
-                                    placeholder="AUTH@LASWELL.COM"
-                                    value={formData.email}
-                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                />
+                                {isLogin && (
+                                    <AuthInput
+                                        label="Email"
+                                        icon={Mail}
+                                        type="email"
+                                        placeholder="AUTH@LASWELL.COM"
+                                        value={formData.email}
+                                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                    />
+                                )}
                                 <AuthInput
                                     label="Password"
                                     icon={Lock}
@@ -163,22 +183,22 @@ const AuthPage = () => {
                                 />
                                 {!isLogin && (
                                     <AuthInput
-                                        label="Confirm Password"
+                                        label="Change Password"
                                         icon={ShieldCheck}
                                         type="password"
                                         placeholder="••••••••"
-                                        value={formData.confirmPassword}
-                                        onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
+                                        value={formData.changePassword}
+                                        onChange={(e) => setFormData({ ...formData, changePassword: e.target.value })}
                                     />
                                 )}
                             </motion.div>
                         </AnimatePresence>
 
                         <motion.button
-                            whileHover={{ scale: 1.02, boxShadow: "0 0 20px rgba(0,209,255,0.15)" }}
+                            whileHover={{ scale: 1.02, boxShadow: "0 0 20px rgba(255,107,0,0.15)" }}
                             whileTap={{ scale: 0.98 }}
                             type="submit"
-                            className="w-full py-4 bg-brand-accent text-brand-bg font-bold uppercase tracking-[0.2em] text-xs flex items-center justify-center gap-3 mt-4"
+                            className="w-full py-4 bg-brand-accent text-brand-bg font-bold uppercase tracking-[0.1em] text-xs flex items-center justify-center gap-3 mt-4"
                         >
                             {isLogin ? 'Initialize Session' : 'Register Protocol'}
                             <ArrowRight size={14} />

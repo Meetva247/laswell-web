@@ -3,12 +3,10 @@ import { motion } from 'framer-motion';
 import { Send, Cpu, Layers, MousePointer2 } from 'lucide-react';
 
 const CustomProject = () => {
-    const logos = [
-        'LASWELL', 'ROBOCON', 'STEELWORKS', 'NEURALINK', 'VORTEX', 'AEROFORM'
-    ];
+    const logos = ['LASWELL', 'INKVIBE', 'ROBOCON', 'STEELWORKS', 'NEURALINK', 'VORTEX'];
 
     return (
-        <section id="custom" className="py-24 px-6 border-t border-white/5 relative overflow-hidden">
+        <section id="custom" className="py-24 px-6 border-t border-brand-border relative overflow-hidden">
             {/* Decorative lines */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-full bg-gradient-to-b from-brand-accent/20 to-transparent" />
 
@@ -38,45 +36,45 @@ const CustomProject = () => {
                     </div>
                 </div>
 
-                <div className="glass-card p-8 md:p-12 relative rounded-sm overflow-hidden">
+                <motion.div whileHover={{ scale: 1.02, borderColor: "var(--color-brand-accent)", boxShadow: "0 0 30px rgba(0,216,255,0.1)" }} className="bg-brand-secondary border border-brand-border p-8 md:p-12 relative rounded-sm overflow-hidden transition-all duration-300">
                     {/* Internal Corner Accents for technical depth */}
-                    <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-brand-accent/40" />
-                    <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-brand-accent/40" />
+                    <div className="absolute top-0 left-0 w-8 h-8 border-t border-l border-brand-accent/40" />
+                    <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-brand-accent/40" />
                     <form className="space-y-6">
                         <div className="space-y-2">
                             <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-brand-muted">Full Name</label>
                             <input
                                 type="text"
                                 placeholder="Laswell Commander"
-                                className="w-full bg-brand-glass border border-brand-border p-4 focus:border-brand-accent outline-none transition-colors text-brand-text placeholder:text-brand-muted/30 rounded-sm"
+                                className="w-full bg-brand-bg border border-brand-border p-4 focus:border-brand-accent outline-none transition-colors text-brand-text placeholder:text-brand-text/30 rounded-sm"
                             />
                         </div>
                         <div className="space-y-2">
-                            <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-brand-muted">Project Type</label>
-                            <select className="w-full bg-brand-glass border border-brand-border p-4 focus:border-brand-accent outline-none transition-colors text-brand-text rounded-sm appearance-none">
+                            <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-brand-text/50">Project Type</label>
+                            <select className="w-full bg-brand-bg border border-brand-border p-4 focus:border-brand-accent outline-none transition-colors text-brand-text rounded-sm appearance-none">
                                 <option className="bg-brand-bg">Robotics & Engineering</option>
                                 <option className="bg-brand-bg">Premium Streetwear</option>
                                 <option className="bg-brand-bg">Other Fusion</option>
                             </select>
                         </div>
                         <div className="space-y-2">
-                            <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-brand-muted">Brief Description</label>
+                            <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-brand-text/50">Brief Description</label>
                             <textarea
                                 rows="4"
                                 placeholder="Tell us about the mission..."
-                                className="w-full bg-brand-glass border border-brand-border p-4 focus:border-brand-accent outline-none transition-colors text-brand-text placeholder:text-brand-muted/30 rounded-sm resize-none"
+                                className="w-full bg-brand-bg border border-brand-border p-4 focus:border-brand-accent outline-none transition-colors text-brand-text placeholder:text-brand-text/30 rounded-sm resize-none"
                             ></textarea>
                         </div>
 
                         <motion.button
-                            whileHover={{ scale: 1.02, boxShadow: "0 10px 30px -10px rgba(0, 247, 255, 0.5)" }}
+                            whileHover={{ scale: 1.02, boxShadow: "0 10px 30px -10px rgba(255, 107, 0, 0.5)" }}
                             whileTap={{ scale: 0.98 }}
                             className="w-full py-4 bg-brand-accent text-brand-bg font-bold uppercase tracking-widest flex items-center justify-center gap-3 rounded-sm"
                         >
                             Initiate Transmission <Send size={16} />
                         </motion.button>
                     </form>
-                </div>
+                </motion.div>
             </div>
 
             {/* Scrolling Logos */}
@@ -94,24 +92,9 @@ const CustomProject = () => {
                 </motion.div>
             </div>
 
-            {/* Newsletter */}
-            <div className="max-w-2xl mx-auto mt-32 text-center">
-                <h4 className="text-xl font-bold mb-4 uppercase tracking-widest text-brand-text">Join the Vanguard</h4>
-                <p className="text-brand-muted text-sm mb-8">Weekly drops, engineering deep-dives, and exclusive early access.</p>
-                <div className="flex gap-2 p-1 glass rounded-sm">
-                    <input
-                        type="email"
-                        placeholder="operator@laswell.io"
-                        className="flex-1 bg-transparent px-4 py-2 outline-none text-brand-text text-sm"
-                    />
-                    <button className="bg-brand-text text-brand-bg hover:opacity-90 px-8 py-2 text-xs font-bold uppercase tracking-widest transition-opacity rounded-sm">
-                        Secure
-                    </button>
 
-                </div>
-            </div>
 
-        </section>
+        </section >
     );
 };
 

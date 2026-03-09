@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { MoreVertical, UserPlus, LogIn, LogOut } from 'lucide-react';
+import { MoreVertical, UserPlus, LogIn, LogOut, User } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
@@ -29,28 +29,28 @@ const Navbar = () => {
         window.dispatchEvent(new Event('authChange'));
     };
     const navLinks = [
-        { name: 'Home', path: '/' },
-        { name: 'About', path: '/#about' },
-        { name: 'Services', path: '/services' },
-        { name: 'Shop', path: '/shop' },
-        { name: 'Custom', path: '/#custom' },
+        { name: 'HOME', path: '/' },
+        { name: 'ABOUT', path: '/#about' },
+        { name: 'SERVICES', path: '/services' },
+        { name: 'SHOP', path: '/shop' },
+        { name: 'CUSTOM', path: '/#custom' },
     ];
 
     return (
-        <nav className="fixed top-0 w-full z-40 px-6 py-4 flex justify-between items-center glass border-none">
-            <Link to="/" className="flex items-center gap-2">
+        <nav className="fixed top-0 w-full z-40 px-6 py-4 flex justify-between items-center bg-transparent pointer-events-none">
+            <Link to="/" className="flex items-center gap-2 pointer-events-auto">
                 <span className="text-xl font-display font-bold text-brand-text tracking-tighter">
                     LASWELL
                 </span>
             </Link>
 
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-8 pointer-events-auto">
                 {navLinks.map((link) => (
                     link.path.startsWith('/#') ? (
                         <a
                             key={link.name}
                             href={link.path}
-                            className="text-sm font-medium text-brand-text/70 hover:text-brand-accent transition-colors uppercase tracking-widest"
+                            className="text-xs font-bold text-brand-text/70 hover:text-brand-text transition-colors tracking-widest uppercase"
                         >
                             {link.name}
                         </a>
@@ -58,7 +58,7 @@ const Navbar = () => {
                         <Link
                             key={link.name}
                             to={link.path}
-                            className="text-sm font-medium text-brand-text/70 hover:text-brand-accent transition-colors uppercase tracking-widest"
+                            className="text-xs font-bold text-brand-text/70 hover:text-brand-text transition-colors tracking-widest uppercase"
                         >
                             {link.name}
                         </Link>
@@ -67,15 +67,12 @@ const Navbar = () => {
             </div>
 
 
-            <div className="flex items-center gap-4">
-                <Link to="/build">
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="hidden lg:flex px-6 py-2 btn-color-flex text-brand-bg font-bold text-xs uppercase tracking-widest rounded-full shadow-[0_0_20px_rgba(34,211,238,0.3)] transition-all"
-                    >
-                        Build Your Project
-                    </motion.button>
+            <div className="flex items-center gap-4 pointer-events-auto">
+                <Link
+                    to="/build"
+                    className="hidden md:flex items-center gap-2 px-4 py-2 bg-brand-accent text-[#0a0a0a] text-[10px] sm:text-xs font-bold uppercase tracking-widest rounded-sm hover:brightness-110 transition-all border border-brand-accent shadow-[0_0_15px_rgba(0,216,255,0.2)] hover:shadow-[0_0_25px_rgba(0,216,255,0.4)]"
+                >
+                    Build Your Project
                 </Link>
                 <ThemeToggle />
 
@@ -104,6 +101,7 @@ const Navbar = () => {
                                         <>
                                             <Link
                                                 to="/auth"
+                                                state={{ isSignup: true }}
                                                 onClick={() => setIsMenuOpen(false)}
                                                 className="w-full px-4 py-3 text-left text-xs font-bold uppercase tracking-widest text-brand-text hover:bg-brand-accent/10 flex items-center gap-3 transition-colors group"
                                             >
@@ -112,6 +110,7 @@ const Navbar = () => {
                                             </Link>
                                             <Link
                                                 to="/auth"
+                                                state={{ isSignup: false }}
                                                 onClick={() => setIsMenuOpen(false)}
                                                 className="w-full px-4 py-3 text-left text-xs font-bold uppercase tracking-widest text-brand-text hover:bg-brand-accent/10 flex items-center gap-3 transition-colors group"
                                             >

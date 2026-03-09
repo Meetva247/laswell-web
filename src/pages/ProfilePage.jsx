@@ -50,7 +50,7 @@ const ProfilePage = () => {
         <div className="pt-32 pb-24 bg-brand-bg min-h-screen text-brand-text px-6 relative overflow-hidden">
             {/* Background Accents */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-accent/5 blur-[120px] rounded-full -mr-64 -mt-64" />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-vibrant/5 blur-[120px] rounded-full -ml-64 -mb-64" />
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-blueprint/5 blur-[120px] rounded-full -ml-64 -mb-64" />
 
             <div className="max-w-6xl mx-auto relative z-10">
                 {/* Profile Header */}
@@ -59,7 +59,7 @@ const ProfilePage = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className="glass border border-brand-border p-8 md:p-12 rounded-sm mb-8 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden"
                 >
-                    <div className="absolute top-0 left-0 w-full h-[2px] btn-color-flex opacity-50" />
+                    <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-brand-accent to-brand-bg opacity-50" />
 
                     <div className="w-32 h-32 rounded-sm border-2 border-brand-accent p-1 bg-brand-bg relative group">
                         <div className="w-full h-full bg-brand-accent/10 flex items-center justify-center text-brand-accent group-hover:scale-105 transition-transform duration-500">
@@ -96,10 +96,10 @@ const ProfilePage = () => {
 
                 {/* Grid Stats */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                    <ProfileStat icon={Award} label="Safety Status" value="Certified" color="brand-vibrant" />
+                    <ProfileStat icon={Award} label="Safety Status" value="Certified" color="brand-blueprint" />
                     <ProfileStat icon={Cpu} label="Compute Tokens" value="482.5 XP" color="brand-accent" />
                     <ProfileStat icon={Briefcase} label="Active Quotes" value="03" color="brand-secondary" />
-                    <ProfileStat icon={Calendar} label="Join Date" value="Mar 2024" color="brand-fusion" />
+                    <ProfileStat icon={Calendar} label="Join Date" value="Mar 2024" color="brand-muted" />
                 </div>
 
                 {/* Secondary Section */}

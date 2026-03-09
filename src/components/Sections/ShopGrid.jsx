@@ -31,7 +31,8 @@ const ShopItem = ({ item }) => {
     return (
         <motion.div
             variants={itemVariants}
-            className="relative glass p-6 aspect-[4/5] flex flex-col group cursor-not-allowed rounded-sm overflow-hidden"
+            whileHover={{ scale: 1.02, borderColor: "var(--color-brand-accent)", boxShadow: "0 0 30px rgba(0,216,255,0.1)" }}
+            className="relative glass p-6 aspect-[4/5] flex flex-col group cursor-not-allowed rounded-sm overflow-hidden border border-transparent transition-all duration-300"
         >
             {/* "Coming Soon" Overlay */}
             <div className="absolute inset-0 z-20 glass-frosted opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-6 text-center">

@@ -23,8 +23,11 @@ const serviceImages = {
 };
 
 
+const createSlug = (text) => text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+
 const ServiceSection = ({ title, subtitle, description, highlights, specs, icon: Icon, bgClass, image, isReversed }) => (
     <motion.div
+        id={createSlug(title)}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -191,7 +194,7 @@ const ServicesPage = () => {
 
                 {/* Laser Cutting & Engraving */}
                 <ServiceSection
-                    title="Laser Cutting"
+                    title="Laser Cutting & Engraving"
                     subtitle="Photon Processing"
                     description="High-precision laser cutting and engraving services across multiple material types. Quick turnaround for intricate flat-pattern parts and decorative engraving."
                     icon={Layers}
