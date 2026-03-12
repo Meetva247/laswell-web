@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ChevronRight, Award, ShieldCheck, Download, Settings } from 'lucide-react';
+import { ChevronDown, ChevronRight, Award, ShieldCheck, Download, Settings, Mail, Github } from 'lucide-react';
+import arduinoImg from '../assets/arduino_uno.png';
+import driverImg from '../assets/l298n_driver.png';
+import groupImg from '../assets/components_group.png';
 import DataCard from '../components/UI/DataCard';
 import TechnicalButton from '../components/UI/TechnicalButton';
 
@@ -81,7 +85,29 @@ const CollapsibleSpec = ({ spec }) => {
     );
 };
 
+const ProtocolButton = ({ label, icon, onClick, variant = 'default' }) => (
+    <button 
+        onClick={onClick}
+        className={`group relative flex items-center justify-between px-6 py-4 border rounded-xl overflow-hidden transition-all duration-500 shadow-lg ${
+            variant === 'accent' 
+            ? 'bg-[#0a0a0a] border-brand-border text-white' 
+            : 'bg-transparent border-brand-border text-brand-text hover:border-transparent'
+        }`}
+    >
+        {/* Color-Flex Filling Background - Unified for all buttons */}
+        <div className="absolute inset-x-0 inset-y-0 opacity-0 group-hover:opacity-100 transition-all duration-700 -translate-x-full group-hover:translate-x-0 bg-gradient-to-r from-brand-accent via-brand-purple to-brand-accent z-0" />
+        
+        <span className="relative z-10 text-[10px] font-display font-bold uppercase tracking-[0.2em] group-hover:text-white transition-colors">
+            {label}
+        </span>
+        <span className="relative z-10 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all group-hover:text-white">
+            {icon}
+        </span>
+    </button>
+);
+
 const BuildPage = () => {
+    const navigate = useNavigate();
     return (
         <div className="pt-32 pb-24 bg-brand-bg min-h-screen">
             <div className="max-w-7xl mx-auto px-6">
@@ -162,9 +188,85 @@ const BuildPage = () => {
                     </div>
                 </div>
 
+                {/* Robotics Kits Section */}
+                <div className="mt-24 border-t border-brand-border pt-24">
+                    <div className="flex items-center gap-3 mb-8">
+                        <div className="w-8 h-[1px] bg-brand-accent"></div>
+                        <span className="font-mono text-brand-accent text-xs tracking-[0.2em] font-bold">PROJECT HUB // KIT ECOSYSTEM</span>
+                    </div>
+
+                    <div className="enterprise-glass p-8 md:p-12 border-brand-accent/20 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-brand-accent/5 blur-[100px] rounded-full" />
+                        
+                        <div className="relative z-10">
+                            <h2 className="text-3xl font-display font-bold uppercase tracking-widest text-brand-text mb-4">Line Follower Robot</h2>
+                            <p className="text-brand-text-muted font-mono text-sm max-w-2xl mb-10">
+                                A classic robotics project designed for autonomous precision tracking using high-speed IR sensors and motor normalization logic.
+                            </p>
+
+                            {/* Kit Components Reel V2 */}
+                            <div className="mb-16">
+                                <p className="text-[10px] font-mono text-brand-accent uppercase tracking-[0.3em] mb-6">Kit Architecture // Core Components</p>
+                                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+                                    {[
+                                        { name: 'Arduino Uno', img: arduinoImg },
+                                        { name: 'L298N Driver', img: driverImg },
+                                        { name: 'Dual Motors', img: groupImg },
+                                        { name: 'IR Sensors', img: groupImg },
+                                        { name: 'Lipo Battery', img: groupImg },
+                                        { name: 'Chassis', img: groupImg },
+                                        { name: 'Jumpers', img: groupImg }
+                                    ].map((comp, i) => (
+                                        <div key={i} className="group relative overflow-hidden bg-brand-bg/50 border border-brand-border hover:border-brand-accent/50 transition-all duration-500">
+                                            <div className="aspect-square relative overflow-hidden">
+                                                <img 
+                                                    src={comp.img} 
+                                                    alt={comp.name} 
+                                                    className="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
+                                                />
+                                                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
+                                            </div>
+                                            <div className="p-3 bg-brand-glass border-t border-brand-border group-hover:border-brand-accent/30 transition-colors">
+                                                <span className="text-[8px] font-mono text-brand-text/70 uppercase tracking-widest">{comp.name}</span>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Protocol Buttons - Dynamic Flex Presentation */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                                <ProtocolButton 
+                                    label="Code" 
+                                    icon={<Github size={16} />} 
+                                    onClick={() => window.open('https://github.com', '_blank')}
+                                    variant="default"
+                                />
+                                <ProtocolButton 
+                                    label="Details" 
+                                    icon={<Settings size={16} />} 
+                                    onClick={() => navigate('/project/line-follower')}
+                                />
+                                <ProtocolButton 
+                                    label="Component Delivery" 
+                                    icon={<ShieldCheck size={16} />} 
+                                    onClick={() => alert("Protocol: INITIALIZING SECURE PROCUREMENT...")}
+                                    variant="accent"
+                                />
+                                <ProtocolButton 
+                                    label="Need Help" 
+                                    icon={<Mail size={16} />} 
+                                    onClick={() => window.location.href = 'mailto:robotics@laswell.com?subject=Line%20Follower%20Support'}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     );
 };
+
 
 export default BuildPage;

@@ -12,12 +12,14 @@ const Hero = () => {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="max-w-4xl mx-auto flex flex-col items-center"
                 >
-                    <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-display font-bold leading-[1.1] tracking-wider text-brand-text mb-8">
-                        ROBOTICS,<br />
-                        AUTOMATION &<br />
-                        <span className="text-color-flex">ON-DEMAND</span><br />
-                        <span className="text-color-flex">MANUFACTURING</span>
-                    </h1>
+                    <div className="flex flex-col items-center gap-4 md:gap-6">
+                        <span className="text-4xl md:text-6xl lg:text-7xl font-black tracking-[0.1em] md:tracking-[0.15em] uppercase text-white leading-tight">Robotics,</span>
+                        <span className="text-4xl md:text-6xl lg:text-7xl font-black tracking-[0.1em] md:tracking-[0.15em] uppercase text-white leading-tight">Automation &</span>
+                        <span className="text-4xl md:text-6xl lg:text-7xl font-black tracking-[0.05em] md:tracking-[0.1em] uppercase text-color-flex leading-tight">On-Demand</span>
+                        <span className="text-4xl md:text-6xl lg:text-7xl font-black tracking-[0.05em] md:tracking-[0.1em] uppercase text-color-flex leading-tight">
+                            Manufacturing
+                        </span>
+                    </div>
 
                     <p className="font-mono text-brand-text/60 text-xs md:text-sm tracking-widest uppercase mb-12 font-bold max-w-2xl text-center">
                         PROFESSIONAL MANUFACTURING SOLUTIONS FOR YOUR NEXT INNOVATION

@@ -24,6 +24,7 @@ const Navbar = () => {
     const handleLogout = () => {
         localStorage.removeItem('laswell_auth');
         localStorage.removeItem('laswell_user');
+        localStorage.removeItem('laswell_user_data');
         setIsLoggedIn(false);
         setIsMenuOpen(false);
         window.dispatchEvent(new Event('authChange'));
@@ -82,11 +83,11 @@ const Navbar = () => {
                         whileTap={{ scale: 0.9 }}
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                         className="p-2 text-brand-text hover:text-brand-accent transition-colors rounded-full"
-                        aria-label="More options"
+                        aria-label={isLoggedIn ? "User Profile" : "More options"}
                     >
-                        <MoreVertical size={20} />
+                        {isLoggedIn ? <User size={20} /> : <MoreVertical size={20} />}
                     </motion.button>
-
+ 
                     <AnimatePresence>
                         {isMenuOpen && (
                             <motion.div
@@ -120,9 +121,9 @@ const Navbar = () => {
                                         </>
                                     ) : (
                                         <>
-                                            <div className="px-4 py-2 border-b border-brand-border mb-1">
-                                                <p className="text-[8px] font-mono text-brand-muted uppercase tracking-tighter">Active Session</p>
-                                                <p className="text-[10px] font-bold text-brand-accent truncate uppercase">{userName}</p>
+                                            <div className="px-4 py-2 border-b border-brand-accent/10">
+                                                <p className="text-[10px] text-brand-text/50 uppercase tracking-tighter">Logged in as</p>
+                                                <p className="text-xs font-bold text-brand-accent truncate">{userName || 'Member'}</p>
                                             </div>
                                             <Link
                                                 to="/profile"
@@ -134,9 +135,9 @@ const Navbar = () => {
                                             </Link>
                                             <button
                                                 onClick={handleLogout}
-                                                className="w-full px-4 py-3 text-left text-xs font-bold uppercase tracking-widest text-brand-secondary hover:bg-brand-secondary/10 flex items-center gap-3 transition-colors group"
+                                                className="w-full px-4 py-3 text-left text-xs font-bold uppercase tracking-widest text-red-500/80 hover:bg-red-500/10 hover:text-red-500 flex items-center gap-3 transition-colors group"
                                             >
-                                                <LogOut size={14} className="group-hover:text-brand-secondary transition-colors" />
+                                                <LogOut size={14} className="group-hover:text-red-500 transition-colors" />
                                                 Logout
                                             </button>
                                         </>

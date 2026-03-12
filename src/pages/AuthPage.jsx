@@ -55,10 +55,30 @@ const AuthPage = () => {
         password: '',
         changePassword: ''
     });
+    const [error, setError] = useState('');
     const navigate = useNavigate();
+
+    const validatePassword = (pass) => {
+        // Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character
+        const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        return regex.test(pass);
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setError('');
+
+        if (!isLogin) {
+            if (!validatePassword(formData.password)) {
+                setError('Protocol rejection: Password must be 8+ characters and include uppercase, lowercase, numbers, and special symbols.');
+                return;
+            }
+            if (formData.password !== formData.changePassword) {
+                setError('Protocol mismatch: Passwords do not match.');
+                return;
+            }
+        }
+
         // Simulate Auth Logic
         const userRole = formData.role === 'Other' ? formData.otherRole : formData.role;
         const userData = {
@@ -102,6 +122,16 @@ const AuthPage = () => {
                         <p className="text-brand-muted text-xs font-mono tracking-widest uppercase italic">
                             {isLogin ? 'Access your engineering portal' : 'Join the LASWELL ecosystem'}
                         </p>
+                        
+                        {error && (
+                            <motion.div 
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: 'auto' }}
+                                className="mt-4 p-3 bg-red-500/10 border border-red-500/20 text-red-500 text-[10px] uppercase font-bold tracking-tighter rounded-sm"
+                            >
+                                {error}
+                            </motion.div>
+                        )}
                     </div>
 
                     <form onSubmit={handleSubmit}>
@@ -119,17 +149,17 @@ const AuthPage = () => {
                                             label="Full Name"
                                             icon={User}
                                             type="text"
-                                            placeholder="LASWELL OPERATOR"
-                                            value={formData.name}
-                                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                            placeholder="laswell operator"
+                                            value={formData.name.toLowerCase()}
+                                            onChange={(e) => setFormData({ ...formData, name: e.target.value.toLowerCase() })}
                                         />
                                         <AuthInput
                                             label="Email"
                                             icon={Mail}
                                             type="email"
-                                            placeholder="AUTH@LASWELL.COM"
-                                            value={formData.email}
-                                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                            placeholder="auth@laswell.com"
+                                            value={formData.email.toLowerCase()}
+                                            onChange={(e) => setFormData({ ...formData, email: e.target.value.toLowerCase() })}
                                         />
                                         <div className="mb-6">
                                             <label className="block text-[10px] font-bold uppercase tracking-[0.1em] text-brand-muted mb-2 ml-1">
@@ -168,9 +198,9 @@ const AuthPage = () => {
                                         label="Email"
                                         icon={Mail}
                                         type="email"
-                                        placeholder="AUTH@LASWELL.COM"
+                                        placeholder="auth@laswell.com"
                                         value={formData.email}
-                                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                        onChange={(e) => setFormData({ ...formData, email: e.target.value.toLowerCase() })}
                                     />
                                 )}
                                 <AuthInput

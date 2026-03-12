@@ -83,15 +83,6 @@ const ProfilePage = () => {
                             </span>
                         </div>
                     </div>
-
-                    <div className="flex gap-4">
-                        <button
-                            onClick={handleLogout}
-                            className="p-4 border border-brand-secondary/20 text-brand-secondary hover:bg-brand-secondary/10 transition-colors flex items-center gap-3 text-xs font-bold uppercase tracking-widest rounded-sm"
-                        >
-                            <LogOut size={16} /> Logout
-                        </button>
-                    </div>
                 </motion.div>
 
                 {/* Grid Stats */}
@@ -121,9 +112,18 @@ const ProfilePage = () => {
                                     {user.role}
                                 </p>
                             </div>
-                            <button className="px-8 py-3 bg-brand-accent/10 border border-brand-accent text-brand-accent text-xs font-bold uppercase tracking-[0.2em] hover:bg-brand-accent hover:text-brand-bg transition-all">
-                                Update Credentials
-                            </button>
+                            <div className="flex flex-wrap gap-4">
+                                <button className="px-8 py-3 bg-brand-accent/10 border border-brand-accent text-brand-accent text-xs font-bold uppercase tracking-[0.2em] hover:bg-brand-accent hover:text-brand-bg transition-all">
+                                    Update Credentials
+                                </button>
+                                <button 
+                                    onClick={handleLogout}
+                                    className="px-8 py-3 bg-red-500/10 border border-red-500 text-red-500 text-xs font-bold uppercase tracking-[0.2em] hover:bg-red-500 hover:text-white transition-all flex items-center gap-3"
+                                >
+                                    <LogOut size={14} />
+                                    Terminate Session
+                                </button>
+                            </div>
                         </div>
                     </div>
 

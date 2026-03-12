@@ -11,6 +11,7 @@ import BuildPage from './pages/BuildPage'
 import AuthPage from './pages/AuthPage'
 import ProfilePage from './pages/ProfilePage'
 import DocumentationPortal from './pages/DocumentationPortal'
+import ProjectDetailPage from './pages/ProjectDetailPage'
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/auth" element={<AuthPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/docs" element={<DocumentationPortal />} />
+          <Route path="/project/:projectId" element={<ProjectDetailPage />} />
         </Routes>
 
 
