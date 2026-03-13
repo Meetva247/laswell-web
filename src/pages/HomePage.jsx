@@ -8,15 +8,15 @@ import FinalCTAs from '../components/Sections/FinalCTAs'
 
 function HomePage() {
     return (
-        <>
-            <Hero />
-            <About />
-            <Capabilities />
-            <Process />
-            <ServicesGrid />
-            <CustomProject />
-            <FinalCTAs />
-        </>
+        <main className="h-full lg:h-screen overflow-y-auto lg:snap-y lg:snap-mandatory scroll-smooth bg-brand-bg">
+            <div className="presentation-slide"><Hero /></div>
+            <div className="presentation-slide"><About /></div>
+            <div className="presentation-slide"><Capabilities /></div>
+            <div className="presentation-slide"><Process /></div>
+            <div className="presentation-slide"><ServicesGrid /></div>
+            <div className="presentation-slide"><CustomProject /></div>
+            <div className="presentation-slide"><FinalCTAs /></div>
+        </main>
     )
 }
 

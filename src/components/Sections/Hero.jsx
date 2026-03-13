@@ -2,8 +2,23 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
+    const [isHovered, setIsHovered] = React.useState(false);
+
+    const marqueeVariants = {
+        animate: {
+            x: isHovered ? [0, -100, 0] : 0,
+            transition: {
+                x: {
+                    repeat: Infinity,
+                    duration: 10,
+                    ease: "linear"
+                }
+            }
+        }
+    };
+
     return (
-        <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-brand-bg text-center">
+        <section className="presentation-slide min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-brand-bg text-center">
             
             {/* Background Image with Overlay */}
             <div className="absolute inset-0 z-0">
@@ -30,15 +45,23 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="max-w-4xl mx-auto flex flex-col items-center"
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                    className="max-w-4xl mx-auto flex flex-col items-center cursor-default"
                 >
-                    <div className="flex flex-col items-center gap-4 md:gap-6">
-                        <span className="text-4xl md:text-6xl lg:text-7xl font-black tracking-[0.1em] md:tracking-[0.15em] uppercase text-white leading-tight">Robotics,</span>
-                        <span className="text-4xl md:text-6xl lg:text-7xl font-black tracking-[0.1em] md:tracking-[0.15em] uppercase text-white leading-tight">Automation &</span>
-                        <span className="text-4xl md:text-6xl lg:text-7xl font-black tracking-[0.05em] md:tracking-[0.1em] uppercase text-color-flex leading-tight">On-Demand</span>
-                        <span className="text-4xl md:text-6xl lg:text-7xl font-black tracking-[0.05em] md:tracking-[0.1em] uppercase text-color-flex leading-tight">
-                            Manufacturing
-                        </span>
+                    <div className="flex flex-col items-center gap-2 md:gap-4 overflow-hidden py-4">
+                        <motion.div 
+                            animate={isHovered ? { x: [0, -50, 0] } : { x: 0 }}
+                            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                            className="flex flex-col items-center gap-2 md:gap-4 white-space-nowrap"
+                        >
+                            <span className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter uppercase text-white leading-none">Robotics,</span>
+                            <span className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter uppercase text-white leading-none">Automation &</span>
+                            <span className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter uppercase text-color-flex leading-none">On-Demand</span>
+                            <span className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter uppercase text-color-flex leading-none pb-4">
+                                Manufacturing
+                            </span>
+                        </motion.div>
                     </div>
 
                     <p className="font-mono text-brand-text/60 text-xs md:text-sm tracking-widest uppercase mb-12 font-bold max-w-2xl text-center">

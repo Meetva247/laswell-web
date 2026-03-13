@@ -49,6 +49,13 @@
 }
 
 @layer base {
+  @media (min-height: 700px) and (min-width: 1024px) {
+    html {
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+    }
+  }
+
   body {
     @apply bg-brand-bg text-brand-text font-sans antialiased overflow-x-hidden transition-colors duration-300;
     background-color: var(--bg-primary);
@@ -181,5 +188,29 @@
 
   .text-color-flex {
     animation: flex-color 3s ease-in-out infinite;
+  }
+
+  .presentation-slide {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media (min-height: 700px) and (min-width: 1024px) {
+    .presentation-slide {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      height: 100vh;
+    }
+  }
+
+  /* Ensure content doesn't overlap on mobile */
+  @media (max-width: 1023px) {
+    .presentation-slide {
+      height: auto;
+      min-height: auto;
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
   }
 }
