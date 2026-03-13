@@ -8,7 +8,7 @@ import FinalCTAs from '../components/Sections/FinalCTAs'
 
 function HomePage() {
     return (
-        <main className="h-full lg:h-screen overflow-y-auto lg:snap-y lg:snap-mandatory scroll-smooth bg-brand-bg">
+        <main className="h-full lg:h-screen overflow-y-auto lg:snap-y lg:snap-proximity scroll-smooth bg-brand-bg">
             <div className="presentation-slide"><Hero /></div>
             <div className="presentation-slide"><About /></div>
             <div className="presentation-slide"><Capabilities /></div>
