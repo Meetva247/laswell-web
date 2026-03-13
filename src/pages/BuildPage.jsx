@@ -85,22 +85,18 @@ const CollapsibleSpec = ({ spec }) => {
     );
 };
 
-const ProtocolButton = ({ label, icon, onClick, variant = 'default' }) => (
+const ProtocolButton = ({ label, icon, onClick }) => (
     <button 
         onClick={onClick}
-        className={`group relative flex items-center justify-between px-6 py-4 border rounded-xl overflow-hidden transition-all duration-500 shadow-lg ${
-            variant === 'accent' 
-            ? 'bg-[#0a0a0a] border-brand-border text-white' 
-            : 'bg-transparent border-brand-border text-brand-text hover:border-transparent'
-        }`}
+        className="group relative flex items-center justify-between px-6 py-4 border border-brand-border rounded-xl overflow-hidden transition-all duration-500 shadow-lg bg-[#0a0a0a] text-brand-text hover:border-transparent"
     >
         {/* Color-Flex Filling Background - Unified for all buttons */}
-        <div className="absolute inset-x-0 inset-y-0 opacity-0 group-hover:opacity-100 transition-all duration-700 -translate-x-full group-hover:translate-x-0 bg-gradient-to-r from-brand-accent via-brand-purple to-brand-accent z-0" />
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700 bg-color-flex z-0" />
         
-        <span className="relative z-10 text-[10px] font-display font-bold uppercase tracking-[0.2em] group-hover:text-white transition-colors">
+        <span className="relative z-10 text-[10px] font-display font-bold uppercase tracking-[0.2em] group-hover:text-black transition-colors">
             {label}
         </span>
-        <span className="relative z-10 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all group-hover:text-white">
+        <span className="relative z-10 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all group-hover:text-black">
             {icon}
         </span>
     </button>
@@ -240,7 +236,6 @@ const BuildPage = () => {
                                     label="Code" 
                                     icon={<Github size={16} />} 
                                     onClick={() => window.open('https://github.com', '_blank')}
-                                    variant="default"
                                 />
                                 <ProtocolButton 
                                     label="Details" 
@@ -251,7 +246,6 @@ const BuildPage = () => {
                                     label="Component Delivery" 
                                     icon={<ShieldCheck size={16} />} 
                                     onClick={() => alert("Protocol: INITIALIZING SECURE PROCUREMENT...")}
-                                    variant="accent"
                                 />
                                 <ProtocolButton 
                                     label="Need Help" 

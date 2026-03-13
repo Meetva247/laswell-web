@@ -173,7 +173,6 @@
   }
 
   @keyframes flex-color {
-
     0%,
     100% {
       color: var(--color-brand-accent);
@@ -186,8 +185,23 @@
     }
   }
 
+  @keyframes flex-bg {
+    0%, 100% {
+      background-color: var(--color-brand-accent);
+      box-shadow: 0 0 20px rgba(0, 216, 255, 0.3);
+    }
+    50% {
+      background-color: var(--color-brand-purple);
+      box-shadow: 0 0 20px rgba(176, 38, 255, 0.3);
+    }
+  }
+
   .text-color-flex {
     animation: flex-color 3s ease-in-out infinite;
+  }
+
+  .bg-color-flex {
+    animation: flex-bg 3s ease-in-out infinite;
   }
 
   .presentation-slide {
