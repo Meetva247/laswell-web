@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
-    const [isHovered, setIsHovered] = React.useState(false);
 
     return (
         <section className="presentation-slide min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-brand-bg text-center">
@@ -33,22 +32,10 @@ const Hero = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false, amount: 0.1 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
                     className="max-w-5xl mx-auto flex flex-col items-center cursor-default group"
                 >
-                    <div className="flex flex-col items-center gap-2 md:gap-4 overflow-hidden py-10 w-full">
-                        <motion.div 
-                            whileInView={{ x: [-40, 40, -40] }}
-                            transition={{ 
-                                duration: isHovered ? 0.6 : 1.2, 
-                                repeat: Infinity, 
-                                ease: "linear",
-                                repeatType: "mirror" 
-                            }}
-                            viewport={{ once: false }}
-                            className="flex flex-col items-center gap-4 white-space-nowrap"
-                        >
+                    <div className="flex flex-col items-center gap-2 md:gap-4 py-10 w-full">
+                        <div className="flex flex-col items-center gap-4 white-space-nowrap">
                             <div className="text-center text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none">
                                 <span className="text-white">Robotics, </span>
                                 <span className="text-white">Automation &</span>
@@ -57,7 +44,7 @@ const Hero = () => {
                                 <span className="text-color-flex">On-Demand </span>
                                 <span className="text-color-flex">Manufacturing</span>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
 
                     <div className="text-center text-3xl md:text-4xl lg:text-5xl font-bold mt-8">
