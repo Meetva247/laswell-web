@@ -2,21 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
-    const [isHovered, setIsHovered] = React.useState(false);
-
-    const marqueeVariants = {
-        animate: {
-            x: isHovered ? [0, -100, 0] : 0,
-            transition: {
-                x: {
-                    repeat: Infinity,
-                    duration: 10,
-                    ease: "linear"
-                }
-            }
-        }
-    };
-
     return (
         <section className="presentation-slide min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-brand-bg text-center">
             
@@ -43,24 +28,36 @@ const Hero = () => {
 
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.1 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
-                    className="max-w-4xl mx-auto flex flex-col items-center cursor-default"
+                    className="max-w-5xl mx-auto flex flex-col items-center cursor-default"
                 >
-                    <div className="flex flex-col items-center gap-2 md:gap-4 overflow-hidden py-4">
+                    <div className="flex flex-col items-center gap-2 md:gap-4 overflow-hidden py-10 w-full">
                         <motion.div 
-                            animate={isHovered ? { x: [0, -50, 0] } : { x: 0 }}
-                            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                            className="flex flex-col items-center gap-2 md:gap-4 white-space-nowrap"
+                            whileInView={{ x: [-40, 40, -40] }}
+                            transition={{ 
+                                duration: 1.0, 
+                                repeat: Infinity, 
+                                ease: "linear",
+                                repeatType: "mirror" 
+                            }}
+                            viewport={{ once: false }}
+                            className="flex flex-col items-center gap-4 white-space-nowrap"
                         >
-                            <span className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter uppercase text-white leading-none">Robotics,</span>
-                            <span className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter uppercase text-white leading-none">Automation &</span>
-                            <span className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter uppercase text-color-flex leading-none">On-Demand</span>
-                            <span className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter uppercase text-color-flex leading-none pb-4">
-                                Manufacturing
-                            </span>
+                            <div className="text-center text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none">
+                                <span className="text-white">Robotics, </span>
+                                <span className="text-white">Automation &</span>
+                            </div>
+                            <div className="text-center text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none">
+                                <span className="text-color-flex">On-Demand </span>
+                                <span className="text-color-flex">Manufacturing</span>
+                            </div>
+                            <div className="text-center text-3xl md:text-4xl lg:text-5xl font-bold mt-8">
+                                <span className="text-[#9DB2FF] bg-gradient-to-r from-[#00D8FF] to-[#B026FF] bg-clip-text text-transparent">
+                                    Join the Robotics Revolution
+                                </span>
+                            </div>
                         </motion.div>
                     </div>
 
