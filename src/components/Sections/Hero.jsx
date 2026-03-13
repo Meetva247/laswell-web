@@ -4,6 +4,26 @@ import { motion } from 'framer-motion';
 const Hero = () => {
     return (
         <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-brand-bg text-center">
+            
+            {/* Background Image with Overlay */}
+            <div className="absolute inset-0 z-0">
+                <motion.div 
+                    initial={{ scale: 1.1, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 0.4 }}
+                    transition={{ duration: 1.5, ease: "easeOut" }}
+                    className="w-full h-full"
+                >
+                    <img 
+                        src="/robot_hero_bg.png" 
+                        alt="Industrial Robot Background" 
+                        className="w-full h-full object-cover brightness-90"
+                    />
+                </motion.div>
+                {/* Gradient Overlays for readability and depth */}
+                <div className="absolute inset-0 bg-gradient-to-b from-brand-bg/80 via-transparent to-brand-bg" />
+                <div className="absolute inset-0 bg-gradient-to-r from-brand-bg via-transparent to-brand-bg opacity-60" />
+            </div>
+
             <div className="container mx-auto px-6 relative z-10 flex flex-col items-center">
 
                 <motion.div
