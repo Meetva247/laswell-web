@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
+    const [isHovered, setIsHovered] = React.useState(false);
+
     return (
         <section className="presentation-slide min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-brand-bg text-center">
             
@@ -31,13 +33,15 @@ const Hero = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false, amount: 0.1 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="max-w-5xl mx-auto flex flex-col items-center cursor-default"
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                    className="max-w-5xl mx-auto flex flex-col items-center cursor-default group"
                 >
                     <div className="flex flex-col items-center gap-2 md:gap-4 overflow-hidden py-10 w-full">
                         <motion.div 
                             whileInView={{ x: [-40, 40, -40] }}
                             transition={{ 
-                                duration: 1.0, 
+                                duration: isHovered ? 0.6 : 1.2, 
                                 repeat: Infinity, 
                                 ease: "linear",
                                 repeatType: "mirror" 
