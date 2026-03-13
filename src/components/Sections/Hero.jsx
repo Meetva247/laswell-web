@@ -14,9 +14,9 @@ const Hero = () => {
                     className="w-full h-full"
                 >
                     <img 
-                        src="/robot_hero_bg.png" 
-                        alt="Industrial Robot Background" 
-                        className="w-full h-full object-cover brightness-90"
+                        src="/robot_hero_bg_v2.png" 
+                        alt="Robotic Explorer Background" 
+                        className="w-full h-full object-cover brightness-90 animate-pulse-slow"
                     />
                 </motion.div>
                 {/* Gradient Overlays for readability and depth */}
