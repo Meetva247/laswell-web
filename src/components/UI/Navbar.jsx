@@ -98,6 +98,38 @@ const Navbar = () => {
                                 className="absolute right-0 mt-2 w-48 glass rounded-sm shadow-xl border border-brand-accent/20 overflow-hidden"
                             >
                                 <div className="py-1">
+                                    {/* Mobile Navigation Links */}
+                                    <div className="md:hidden border-b border-brand-accent/20 pb-1 mb-1">
+                                        {navLinks.map((link) => (
+                                            link.path.startsWith('/#') ? (
+                                                <a
+                                                    key={link.name}
+                                                    href={link.path}
+                                                    onClick={() => setIsMenuOpen(false)}
+                                                    className="block w-full px-4 py-3 text-left text-xs font-bold uppercase tracking-widest text-brand-text hover:bg-brand-accent/10 transition-colors"
+                                                >
+                                                    {link.name}
+                                                </a>
+                                            ) : (
+                                                <Link
+                                                    key={link.name}
+                                                    to={link.path}
+                                                    onClick={() => setIsMenuOpen(false)}
+                                                    className="block w-full px-4 py-3 text-left text-xs font-bold uppercase tracking-widest text-brand-text hover:bg-brand-accent/10 transition-colors"
+                                                >
+                                                    {link.name}
+                                                </Link>
+                                            )
+                                        ))}
+                                        <Link
+                                            to="/build"
+                                            onClick={() => setIsMenuOpen(false)}
+                                            className="block w-full px-4 py-3 text-left text-xs font-bold uppercase tracking-widest text-brand-accent hover:bg-brand-accent/10 transition-colors"
+                                        >
+                                            BUILD YOUR PROJECT
+                                        </Link>
+                                    </div>
+
                                     {!isLoggedIn ? (
                                         <>
                                             <Link

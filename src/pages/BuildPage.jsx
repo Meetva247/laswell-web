@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ChevronRight, Award, ShieldCheck, Download, Settings, Mail, Github } from 'lucide-react';
-import arduinoImg from '../assets/arduino_uno.png';
-import driverImg from '../assets/l298n_driver.png';
-import groupImg from '../assets/components_group.png';
+import arduinoV2 from '../assets/kit/arduino_uno.png';
+import driverV2 from '../assets/kit/l298n_driver.png';
+import irSensorV2 from '../assets/kit/ir_sensor.png';
+import batteryV2 from '../assets/kit/lipo_battery.png';
+import chassisV2 from '../assets/kit/chassis.png';
 import DataCard from '../components/UI/DataCard';
 import TechnicalButton from '../components/UI/TechnicalButton';
 
@@ -203,17 +205,15 @@ const BuildPage = () => {
                             {/* Kit Components Reel V2 */}
                             <div className="mb-16">
                                 <p className="text-[10px] font-mono text-brand-accent uppercase tracking-[0.3em] mb-6">Kit Architecture // Core Components</p>
-                                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+                                <div className="flex overflow-x-auto gap-4 pb-4 snap-x [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                                     {[
-                                        { name: 'Arduino Uno', img: arduinoImg },
-                                        { name: 'L298N Driver', img: driverImg },
-                                        { name: 'Dual Motors', img: groupImg },
-                                        { name: 'IR Sensors', img: groupImg },
-                                        { name: 'Lipo Battery', img: groupImg },
-                                        { name: 'Chassis', img: groupImg },
-                                        { name: 'Jumpers', img: groupImg }
+                                        { name: 'Arduino Uno', img: arduinoV2 },
+                                        { name: 'L298N Driver', img: driverV2 },
+                                        { name: 'IR Sensors', img: irSensorV2 },
+                                        { name: 'Lipo Battery', img: batteryV2 },
+                                        { name: 'Chassis', img: chassisV2 }
                                     ].map((comp, i) => (
-                                        <div key={i} className="group relative overflow-hidden bg-brand-bg/50 border border-brand-border hover:border-brand-accent/50 transition-all duration-500">
+                                        <div key={i} className="group relative overflow-hidden bg-brand-bg/50 border border-brand-border hover:border-brand-accent/50 transition-all duration-500 flex-none w-[140px] sm:w-[180px] md:flex-1 snap-start">
                                             <div className="aspect-square relative overflow-hidden">
                                                 <img 
                                                     src={comp.img} 

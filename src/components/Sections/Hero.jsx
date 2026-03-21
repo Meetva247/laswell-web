@@ -36,18 +36,18 @@ const Hero = () => {
                 >
                     <div className="flex flex-col items-center gap-2 md:gap-4 py-10 w-full">
                         <div className="flex flex-col items-center gap-4 white-space-nowrap">
-                            <div className="text-center text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none">
+                            <div className="text-center text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none">
                                 <span className="text-white">Robotics, </span>
                                 <span className="text-white">Automation &</span>
                             </div>
-                            <div className="text-center text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none">
+                            <div className="text-center text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none">
                                 <span className="text-color-flex">On-Demand </span>
                                 <span className="text-color-flex">Manufacturing</span>
                             </div>
                         </div>
                     </div>
 
-                    <div className="text-center text-3xl md:text-4xl lg:text-5xl font-bold mt-8">
+                    <div className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-8">
                         <span className="text-[#9DB2FF] bg-gradient-to-r from-[#00D8FF] to-[#B026FF] bg-clip-text text-transparent">
                             Join the Robotics Revolution
                         </span>
