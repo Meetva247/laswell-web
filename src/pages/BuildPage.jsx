@@ -205,7 +205,7 @@ const BuildPage = () => {
                             {/* Kit Components Reel V2 */}
                             <div className="mb-16">
                                 <p className="text-[10px] font-mono text-brand-accent uppercase tracking-[0.3em] mb-6">Kit Architecture // Core Components</p>
-                                <div className="flex overflow-x-auto gap-4 pb-4 snap-x [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+                                <div className="flex overflow-x-auto gap-4 pb-4 snap-x hide-scrollbar">
                                     {[
                                         { name: 'Arduino Uno', img: arduinoV2 },
                                         { name: 'L298N Driver', img: driverV2 },
