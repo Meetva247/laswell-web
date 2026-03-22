@@ -18,12 +18,12 @@ const Hero = () => {
                     className="max-w-5xl mx-auto flex flex-col items-center cursor-default group"
                 >
                     <div className="flex flex-col items-center gap-2 md:gap-4 py-10 w-full">
-                        <div className="flex flex-col items-center gap-6 white-space-nowrap">
-                            <h1 className="text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter uppercase leading-[1.1] max-w-6xl w-full">
-                                <span className="text-white block mb-3">Want to learn competitive robotics</span>
-                                <span className="text-color-flex block">from absolute beginning?</span>
+                        <div className="flex flex-col items-center gap-6 w-full px-4">
+                            <h1 className="text-center font-black tracking-tighter uppercase leading-[1.1] w-full">
+                                <span className="text-white block mb-3 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl">Want to learn competitive robotics</span>
+                                <span className="text-color-flex block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl">from absolute beginning?</span>
                             </h1>
-                            <h2 className="text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold tracking-widest uppercase text-brand-text/80 max-w-4xl mt-4">
+                            <h2 className="text-center text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold tracking-widest uppercase text-brand-text/80 max-w-4xl mt-4">
                                 Compete directly at the IIT Bombay & IIT Roorkee & many more.
                             </h2>
                         </div>
