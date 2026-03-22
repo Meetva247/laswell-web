@@ -6,24 +6,7 @@ const Hero = () => {
     return (
         <section className="presentation-slide min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-brand-bg text-center">
             
-            {/* Background Image with Overlay */}
-            <div className="absolute inset-0 z-0">
-                <motion.div 
-                    initial={{ scale: 1.1, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 0.4 }}
-                    transition={{ duration: 1.5, ease: "easeOut" }}
-                    className="w-full h-full"
-                >
-                    <img 
-                        src="/robot_hero_bg_v2.png" 
-                        alt="Robotic Explorer Background" 
-                        className="w-full h-full object-cover brightness-90 animate-pulse-slow"
-                    />
-                </motion.div>
-                {/* Gradient Overlays for readability and depth */}
-                <div className="absolute inset-0 bg-gradient-to-b from-brand-bg/80 via-transparent to-brand-bg" />
-                <div className="absolute inset-0 bg-gradient-to-r from-brand-bg via-transparent to-brand-bg opacity-60" />
-            </div>
+            {/* Clean dark background */}
 
             <div className="container mx-auto px-6 relative z-10 flex flex-col items-center">
 
@@ -36,11 +19,11 @@ const Hero = () => {
                 >
                     <div className="flex flex-col items-center gap-2 md:gap-4 py-10 w-full">
                         <div className="flex flex-col items-center gap-6 white-space-nowrap">
-                            <h1 className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter uppercase leading-[1.1] max-w-6xl">
-                                <span className="text-white block mb-2">Want to learn competitive robotics </span>
+                            <h1 className="text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter uppercase leading-[1.1] max-w-6xl w-full">
+                                <span className="text-white block mb-3">Want to learn competitive robotics</span>
                                 <span className="text-color-flex block">from absolute beginning?</span>
                             </h1>
-                            <h2 className="text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold tracking-widest uppercase text-brand-text/80 max-w-4xl">
+                            <h2 className="text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold tracking-widest uppercase text-brand-text/80 max-w-4xl mt-4">
                                 Compete directly at the IIT Bombay & IIT Roorkee & many more.
                             </h2>
                         </div>
