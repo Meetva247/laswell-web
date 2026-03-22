@@ -37,11 +37,8 @@ const Hero = () => {
                                         transition={{ duration: 0.6, ease: "easeInOut" }}
                                         className="absolute inset-0 flex flex-col items-center justify-center text-center font-black tracking-tighter uppercase leading-[1.1] w-full max-w-7xl mx-auto gap-3"
                                     >
-                                        <span className="text-color-flex whitespace-nowrap text-[4.3vw] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl">
-                                            Want to learn competitive robotics
-                                        </span>
-                                        <span className="text-color-flex whitespace-nowrap text-[4.3vw] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl">
-                                            from absolute beginning?
+                                        <span className="text-color-flex text-[4.3vw] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl leading-[1.2]">
+                                            Start from zero in competitive robotics.
                                         </span>
                                     </motion.h1>
                                 )}
@@ -55,7 +52,7 @@ const Hero = () => {
                                         className="absolute inset-0 flex flex-col items-center justify-center text-center font-black tracking-tighter uppercase leading-[1.1] w-full max-w-7xl mx-auto gap-3"
                                     >
                                         <span className="text-color-flex text-[4.3vw] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight">
-                                            Compete directly at the IIT Bombay & IIT Roorkee & many more.
+                                            Build your way to national and international competitions.
                                         </span>
                                     </motion.h1>
                                 )}
