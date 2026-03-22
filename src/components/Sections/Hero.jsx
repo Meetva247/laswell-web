@@ -18,14 +18,12 @@ const Hero = () => {
                     className="max-w-5xl mx-auto flex flex-col items-center cursor-default group"
                 >
                     <div className="flex flex-col items-center gap-2 md:gap-4 py-10 w-full">
-                        <div className="flex flex-col items-center gap-6 w-full px-4">
-                            <h1 className="text-center font-black tracking-tighter uppercase leading-[1.1] w-full">
-                                <span className="text-white block mb-3 whitespace-nowrap text-[4.5vw] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl">Want to learn competitive robotics</span>
-                                <span className="text-color-flex block whitespace-nowrap text-[4.5vw] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl">from absolute beginning?</span>
+                        <div className="flex flex-col items-center gap-4 w-full px-4">
+                            <h1 className="text-center font-black tracking-tighter uppercase leading-[1.1] w-full max-w-7xl flex flex-col gap-3">
+                                <span className="text-white whitespace-nowrap text-[4.3vw] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl">Want to learn competitive robotics</span>
+                                <span className="text-color-flex whitespace-nowrap text-[4.3vw] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl">from absolute beginning?</span>
+                                <span className="text-brand-text/90 text-[4.3vw] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl mt-4 leading-tight">Compete directly at the IIT Bombay & IIT Roorkee & many more.</span>
                             </h1>
-                            <h2 className="text-center text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold tracking-widest uppercase text-brand-text/80 max-w-4xl mt-4">
-                                Compete directly at the IIT Bombay & IIT Roorkee & many more.
-                            </h2>
                         </div>
                     </div>
 
