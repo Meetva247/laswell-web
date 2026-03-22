@@ -1,7 +1,15 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Hero = () => {
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentSlide((prev) => (prev === 0 ? 1 : 0));
+        }, 3000); 
+        return () => clearInterval(timer);
+    }, []);
 
     return (
         <section className="presentation-slide min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-brand-bg text-center">
@@ -18,33 +26,40 @@ const Hero = () => {
                     className="max-w-5xl mx-auto flex flex-col items-center cursor-default group"
                 >
                     <div className="flex flex-col items-center gap-2 md:gap-4 py-10 w-full">
-                        <div className="flex flex-col items-center gap-4 w-full px-4">
-                            <h1 className="text-center font-black tracking-tighter uppercase leading-[1.1] w-full max-w-7xl flex flex-col gap-3">
-                                <motion.span 
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.6, delay: 0.0 }}
-                                    className="text-color-flex whitespace-nowrap text-[4.3vw] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl"
-                                >
-                                    Want to learn competitive robotics
-                                </motion.span>
-                                <motion.span 
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.6, delay: 0.3 }}
-                                    className="text-color-flex whitespace-nowrap text-[4.3vw] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl"
-                                >
-                                    from absolute beginning?
-                                </motion.span>
-                                <motion.span 
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.6, delay: 0.6 }}
-                                    className="text-color-flex text-[4.3vw] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl mt-4 leading-tight"
-                                >
-                                    Compete directly at the IIT Bombay & IIT Roorkee & many more.
-                                </motion.span>
-                            </h1>
+                        <div className="flex flex-col items-center w-full px-4 h-[100px] sm:h-[130px] md:h-[180px] lg:h-[220px] xl:h-[260px] relative overflow-hidden my-4">
+                            <AnimatePresence>
+                                {currentSlide === 0 && (
+                                    <motion.h1 
+                                        key="slide1"
+                                        initial={{ y: 50, opacity: 0 }}
+                                        animate={{ y: 0, opacity: 1 }}
+                                        exit={{ y: -50, opacity: 0 }}
+                                        transition={{ duration: 0.6, ease: "easeInOut" }}
+                                        className="absolute inset-0 flex flex-col items-center justify-center text-center font-black tracking-tighter uppercase leading-[1.1] w-full max-w-7xl mx-auto gap-3"
+                                    >
+                                        <span className="text-color-flex whitespace-nowrap text-[4.3vw] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl">
+                                            Want to learn competitive robotics
+                                        </span>
+                                        <span className="text-color-flex whitespace-nowrap text-[4.3vw] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl">
+                                            from absolute beginning?
+                                        </span>
+                                    </motion.h1>
+                                )}
+                                {currentSlide === 1 && (
+                                    <motion.h1 
+                                        key="slide2"
+                                        initial={{ y: 50, opacity: 0 }}
+                                        animate={{ y: 0, opacity: 1 }}
+                                        exit={{ y: -50, opacity: 0 }}
+                                        transition={{ duration: 0.6, ease: "easeInOut" }}
+                                        className="absolute inset-0 flex flex-col items-center justify-center text-center font-black tracking-tighter uppercase leading-[1.1] w-full max-w-7xl mx-auto gap-3"
+                                    >
+                                        <span className="text-color-flex text-[4.3vw] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight">
+                                            Compete directly at the IIT Bombay & IIT Roorkee & many more.
+                                        </span>
+                                    </motion.h1>
+                                )}
+                            </AnimatePresence>
                         </div>
                     </div>
 
