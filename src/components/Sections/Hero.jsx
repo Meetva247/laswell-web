@@ -20,9 +20,30 @@ const Hero = () => {
                     <div className="flex flex-col items-center gap-2 md:gap-4 py-10 w-full">
                         <div className="flex flex-col items-center gap-4 w-full px-4">
                             <h1 className="text-center font-black tracking-tighter uppercase leading-[1.1] w-full max-w-7xl flex flex-col gap-3">
-                                <span className="text-white whitespace-nowrap text-[4.3vw] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl">Want to learn competitive robotics</span>
-                                <span className="text-color-flex whitespace-nowrap text-[4.3vw] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl">from absolute beginning?</span>
-                                <span className="text-brand-text/90 text-[4.3vw] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl mt-4 leading-tight">Compete directly at the IIT Bombay & IIT Roorkee & many more.</span>
+                                <motion.span 
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.6, delay: 0.0 }}
+                                    className="text-white whitespace-nowrap text-[4.3vw] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl"
+                                >
+                                    Want to learn competitive robotics
+                                </motion.span>
+                                <motion.span 
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.6, delay: 0.3 }}
+                                    className="text-color-flex whitespace-nowrap text-[4.3vw] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl"
+                                >
+                                    from absolute beginning?
+                                </motion.span>
+                                <motion.span 
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.6, delay: 0.6 }}
+                                    className="text-brand-text/90 text-[4.3vw] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl mt-4 leading-tight"
+                                >
+                                    Compete directly at the IIT Bombay & IIT Roorkee & many more.
+                                </motion.span>
                             </h1>
                         </div>
                     </div>
