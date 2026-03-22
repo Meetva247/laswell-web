@@ -38,13 +38,9 @@ const Navbar = () => {
 
     return (
         <nav className="fixed top-0 w-full z-40 px-6 py-4 flex justify-between items-center bg-transparent pointer-events-none">
-            <Link to="/" className="flex items-center gap-2 pointer-events-auto">
-                <span className="text-xl font-display font-bold text-brand-text tracking-tighter">
-                    LASWELL
-                </span>
-            </Link>
-
-            <div className="hidden md:flex items-center gap-8 pointer-events-auto">
+            
+            {/* Left side: Navigation Links */}
+            <div className="hidden md:flex items-center gap-8 pointer-events-auto flex-1">
                 {navLinks.map((link) => (
                     link.path.startsWith('/#') ? (
                         <a
@@ -66,8 +62,20 @@ const Navbar = () => {
                 ))}
             </div>
 
+            {/* Mobile spacing for flex-between */}
+            <div className="md:hidden flex-1 pointer-events-none"></div>
 
-            <div className="flex items-center gap-4 pointer-events-auto">
+            {/* Center: Logo */}
+            <div className="absolute left-1/2 top-[22px] -translate-x-1/2 -translate-y-1/2 flex justify-center pointer-events-auto z-50">
+                <Link to="/" className="flex items-center gap-2">
+                    <span className="text-xl md:text-2xl font-display font-bold text-brand-text tracking-tighter whitespace-nowrap uppercase">
+                        LASWELL ROBOTICS
+                    </span>
+                </Link>
+            </div>
+
+            {/* Right side: Actions */}
+            <div className="flex items-center gap-4 pointer-events-auto flex-1 justify-end">
                 <Link
                     to="/build"
                     className="hidden md:flex items-center gap-2 px-4 py-2 bg-brand-accent text-[#0a0a0a] text-[10px] sm:text-xs font-bold uppercase tracking-widest rounded-sm hover:brightness-110 transition-all border border-brand-accent shadow-[0_0_15px_rgba(0,216,255,0.2)] hover:shadow-[0_0_25px_rgba(0,216,255,0.4)]"
