@@ -37,10 +37,10 @@ const Hero = () => {
                                         transition={{ duration: 0.6, ease: "easeInOut" }}
                                         className="absolute inset-0 flex flex-col items-center justify-center text-center font-black tracking-tighter uppercase leading-[1.1] w-full max-w-7xl mx-auto gap-3"
                                     >
-                                        <span className="text-color-flex text-[6vw] sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] w-full">
+                                        <span className="text-color-flex whitespace-nowrap text-[4.5vw] sm:text-3xl md:text-4xl lg:text-5xl xl:text-[4rem] 2xl:text-[4.5rem] leading-[1.1] w-full">
                                             Start from zero in
                                         </span>
-                                        <span className="text-color-flex text-[6vw] sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] w-full">
+                                        <span className="text-color-flex whitespace-nowrap text-[4.5vw] sm:text-3xl md:text-4xl lg:text-5xl xl:text-[4rem] 2xl:text-[4.5rem] leading-[1.1] w-full">
                                             competitive robotics.
                                         </span>
                                     </motion.h1>
@@ -54,10 +54,10 @@ const Hero = () => {
                                         transition={{ duration: 0.6, ease: "easeInOut" }}
                                         className="absolute inset-0 flex flex-col items-center justify-center text-center font-black tracking-tighter uppercase leading-[1.1] w-full max-w-7xl mx-auto gap-3"
                                     >
-                                        <span className="text-color-flex text-[6vw] sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] w-full">
+                                        <span className="text-color-flex whitespace-nowrap text-[4.5vw] sm:text-3xl md:text-4xl lg:text-5xl xl:text-[4rem] 2xl:text-[4.5rem] leading-[1.1] w-full">
                                             Build your way to national and
                                         </span>
-                                        <span className="text-color-flex text-[6vw] sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] w-full">
+                                        <span className="text-color-flex whitespace-nowrap text-[4.5vw] sm:text-3xl md:text-4xl lg:text-5xl xl:text-[4rem] 2xl:text-[4.5rem] leading-[1.1] w-full">
                                             international competitions.
                                         </span>
                                     </motion.h1>
