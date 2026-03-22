@@ -30,7 +30,6 @@ const Navbar = () => {
         window.dispatchEvent(new Event('authChange'));
     };
     const navLinks = [
-        { name: 'HOME', path: '/' },
         { name: 'SHOP', path: '/shop' },
     ];
 
