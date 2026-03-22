@@ -5,7 +5,6 @@ import ScrollProgressBar from './components/UI/ScrollProgressBar'
 import ScrollToTop from './components/UI/ScrollToTop'
 import HUDOverlay from './components/UI/HUDOverlay'
 import HomePage from './pages/HomePage'
-import ServicesPage from './pages/ServicesPage'
 import ShopPage from './pages/ShopPage'
 import BuildPage from './pages/BuildPage'
 import AuthPage from './pages/AuthPage'
@@ -25,7 +24,6 @@ function App() {
 
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/services" element={<ServicesPage />} />
           <Route path="/shop" element={<ShopPage />} />
           <Route path="/build" element={<BuildPage />} />
           <Route path="/auth" element={<AuthPage />} />
