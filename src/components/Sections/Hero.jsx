@@ -24,7 +24,7 @@ const Hero = () => {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.6, delay: 0.0 }}
-                                    className="text-white whitespace-nowrap text-[4.3vw] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl"
+                                    className="text-color-flex whitespace-nowrap text-[4.3vw] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl"
                                 >
                                     Want to learn competitive robotics
                                 </motion.span>
@@ -40,7 +40,7 @@ const Hero = () => {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.6, delay: 0.6 }}
-                                    className="text-brand-text/90 text-[4.3vw] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl mt-4 leading-tight"
+                                    className="text-color-flex text-[4.3vw] sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl mt-4 leading-tight"
                                 >
                                     Compete directly at the IIT Bombay & IIT Roorkee & many more.
                                 </motion.span>
