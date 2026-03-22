@@ -43,7 +43,7 @@ const Navbar = () => {
                         <a
                             key={link.name}
                             href={link.path}
-                            className={link.name === 'SHOP' ? "flex items-center gap-2 px-6 py-2 bg-[#0a0a0a] border border-brand-accent/20 text-color-flex text-lg md:text-xl font-display font-bold uppercase tracking-widest rounded-xl hover:scale-105 transition-all hover:border-brand-accent/50" : "text-xs font-bold text-brand-text/70 hover:text-brand-text transition-colors tracking-widest uppercase"}
+                            className={link.name === 'SHOP' ? "flex items-center gap-2 px-6 py-2 bg-white shadow-[0_0_15px_rgba(255,255,255,0.2)] text-color-flex text-lg md:text-xl font-display font-bold uppercase tracking-widest rounded-xl hover:scale-105 transition-all hover:shadow-[0_0_25px_rgba(255,255,255,0.4)]" : "text-xs font-bold text-brand-text/70 hover:text-brand-text transition-colors tracking-widest uppercase"}
                         >
                             {link.name}
                         </a>
@@ -51,7 +51,7 @@ const Navbar = () => {
                         <Link
                             key={link.name}
                             to={link.path}
-                            className={link.name === 'SHOP' ? "flex items-center gap-2 px-6 py-2 bg-[#0a0a0a] border border-brand-accent/20 text-color-flex text-lg md:text-xl font-display font-bold uppercase tracking-widest rounded-xl hover:scale-105 transition-all hover:border-brand-accent/50" : "text-xs font-bold text-brand-text/70 hover:text-brand-text transition-colors tracking-widest uppercase"}
+                            className={link.name === 'SHOP' ? "flex items-center gap-2 px-6 py-2 bg-white shadow-[0_0_15px_rgba(255,255,255,0.2)] text-color-flex text-lg md:text-xl font-display font-bold uppercase tracking-widest rounded-xl hover:scale-105 transition-all hover:shadow-[0_0_25px_rgba(255,255,255,0.4)]" : "text-xs font-bold text-brand-text/70 hover:text-brand-text transition-colors tracking-widest uppercase"}
                         >
                             {link.name}
                         </Link>
@@ -110,7 +110,7 @@ const Navbar = () => {
                                                     key={link.name}
                                                     href={link.path}
                                                     onClick={() => setIsMenuOpen(false)}
-                                                    className={link.name === 'SHOP' ? "block w-full px-4 py-3 text-center bg-[#0a0a0a] border border-brand-accent/20 text-color-flex text-lg font-display font-bold uppercase tracking-widest rounded-xl my-2 transition-all hover:border-brand-accent/50" : "block w-full px-4 py-3 text-left text-xs font-bold uppercase tracking-widest text-brand-text hover:bg-brand-accent/10 transition-colors"}
+                                                    className={link.name === 'SHOP' ? "block w-full px-4 py-3 text-center bg-white shadow-[0_0_15px_rgba(255,255,255,0.2)] text-color-flex text-lg font-display font-bold uppercase tracking-widest rounded-xl my-2 transition-all hover:shadow-[0_0_25px_rgba(255,255,255,0.4)]" : "block w-full px-4 py-3 text-left text-xs font-bold uppercase tracking-widest text-brand-text hover:bg-brand-accent/10 transition-colors"}
                                                 >
                                                     {link.name}
                                                 </a>
@@ -119,7 +119,7 @@ const Navbar = () => {
                                                     key={link.name}
                                                     to={link.path}
                                                     onClick={() => setIsMenuOpen(false)}
-                                                    className={link.name === 'SHOP' ? "block w-full px-4 py-3 text-center bg-[#0a0a0a] border border-brand-accent/20 text-color-flex text-lg font-display font-bold uppercase tracking-widest rounded-xl my-2 transition-all hover:border-brand-accent/50" : "block w-full px-4 py-3 text-left text-xs font-bold uppercase tracking-widest text-brand-text hover:bg-brand-accent/10 transition-colors"}
+                                                    className={link.name === 'SHOP' ? "block w-full px-4 py-3 text-center bg-white shadow-[0_0_15px_rgba(255,255,255,0.2)] text-color-flex text-lg font-display font-bold uppercase tracking-widest rounded-xl my-2 transition-all hover:shadow-[0_0_25px_rgba(255,255,255,0.4)]" : "block w-full px-4 py-3 text-left text-xs font-bold uppercase tracking-widest text-brand-text hover:bg-brand-accent/10 transition-colors"}
                                                 >
                                                     {link.name}
                                                 </Link>
