@@ -43,7 +43,7 @@ const Navbar = () => {
                         <a
                             key={link.name}
                             href={link.path}
-                            className={link.name === 'SHOP' ? "px-6 py-2 border border-brand-accent/30 rounded-xl bg-brand-accent/5 text-lg md:text-xl font-display font-bold text-color-flex tracking-widest uppercase transition-all hover:scale-105 hover:bg-brand-accent/10 hover:border-brand-accent/60" : "text-xs font-bold text-brand-text/70 hover:text-brand-text transition-colors tracking-widest uppercase"}
+                            className={link.name === 'SHOP' ? "flex items-center gap-2 px-4 py-2 bg-brand-accent text-[#0a0a0a] text-[10px] sm:text-xs font-bold uppercase tracking-widest rounded-sm hover:brightness-110 transition-all border border-brand-accent shadow-[0_0_15px_rgba(0,216,255,0.2)] hover:shadow-[0_0_25px_rgba(0,216,255,0.4)]" : "text-xs font-bold text-brand-text/70 hover:text-brand-text transition-colors tracking-widest uppercase"}
                         >
                             {link.name}
                         </a>
@@ -51,7 +51,7 @@ const Navbar = () => {
                         <Link
                             key={link.name}
                             to={link.path}
-                            className={link.name === 'SHOP' ? "px-6 py-2 border border-brand-accent/30 rounded-xl bg-brand-accent/5 text-lg md:text-xl font-display font-bold text-color-flex tracking-widest uppercase transition-all hover:scale-105 hover:bg-brand-accent/10 hover:border-brand-accent/60" : "text-xs font-bold text-brand-text/70 hover:text-brand-text transition-colors tracking-widest uppercase"}
+                            className={link.name === 'SHOP' ? "flex items-center gap-2 px-4 py-2 bg-brand-accent text-[#0a0a0a] text-[10px] sm:text-xs font-bold uppercase tracking-widest rounded-sm hover:brightness-110 transition-all border border-brand-accent shadow-[0_0_15px_rgba(0,216,255,0.2)] hover:shadow-[0_0_25px_rgba(0,216,255,0.4)]" : "text-xs font-bold text-brand-text/70 hover:text-brand-text transition-colors tracking-widest uppercase"}
                         >
                             {link.name}
                         </Link>
@@ -110,7 +110,7 @@ const Navbar = () => {
                                                     key={link.name}
                                                     href={link.path}
                                                     onClick={() => setIsMenuOpen(false)}
-                                                    className={link.name === 'SHOP' ? "block w-full px-4 py-3 text-center border border-brand-accent/30 rounded-xl bg-brand-accent/5 text-lg font-display font-bold uppercase tracking-widest text-color-flex hover:bg-brand-accent/10 transition-all my-2" : "block w-full px-4 py-3 text-left text-xs font-bold uppercase tracking-widest text-brand-text hover:bg-brand-accent/10 transition-colors"}
+                                                    className={link.name === 'SHOP' ? "block w-full px-4 py-3 text-left text-xs bg-brand-accent text-[#0a0a0a] font-bold uppercase tracking-widest rounded-sm hover:brightness-110 transition-all" : "block w-full px-4 py-3 text-left text-xs font-bold uppercase tracking-widest text-brand-text hover:bg-brand-accent/10 transition-colors"}
                                                 >
                                                     {link.name}
                                                 </a>
@@ -119,7 +119,7 @@ const Navbar = () => {
                                                     key={link.name}
                                                     to={link.path}
                                                     onClick={() => setIsMenuOpen(false)}
-                                                    className={link.name === 'SHOP' ? "block w-full px-4 py-3 text-center border border-brand-accent/30 rounded-xl bg-brand-accent/5 text-lg font-display font-bold uppercase tracking-widest text-color-flex hover:bg-brand-accent/10 transition-all my-2" : "block w-full px-4 py-3 text-left text-xs font-bold uppercase tracking-widest text-brand-text hover:bg-brand-accent/10 transition-colors"}
+                                                    className={link.name === 'SHOP' ? "block w-full px-4 py-3 text-left text-xs bg-brand-accent text-[#0a0a0a] font-bold uppercase tracking-widest rounded-sm hover:brightness-110 transition-all" : "block w-full px-4 py-3 text-left text-xs font-bold uppercase tracking-widest text-brand-text hover:bg-brand-accent/10 transition-colors"}
                                                 >
                                                     {link.name}
                                                 </Link>
