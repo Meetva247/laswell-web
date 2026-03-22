@@ -23,7 +23,7 @@ const ShopCategory = ({ title, description, image, index }) => (
             <img
                 src={image}
                 alt={title}
-                className="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-60 group-hover:scale-110 transition-all duration-700"
+                className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-brand-bg via-transparent to-transparent opacity-80" />
         </div>
