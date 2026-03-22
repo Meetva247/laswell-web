@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ChevronLeft, Github, Box, Cpu, Zap, ShieldCheck } from 'lucide-react';
 import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
 import RobotModel from '../components/Sections/RobotModel';
 import TechnicalButton from '../components/UI/TechnicalButton';
 
@@ -33,18 +34,6 @@ void loop() {
 const ProjectDetailPage = () => {
     const { projectId } = useParams();
     const project = projectsData[projectId] || projectsData['line-follower'];
-    const [mousePos, setMousePos] = React.useState({ x: 0, y: 0 });
-
-    const handleMouseMove = (e) => {
-        const rect = e.currentTarget.getBoundingClientRect();
-        const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-        const y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
-        setMousePos({ x, y });
-    };
-
-    const handleMouseLeave = () => {
-        setMousePos({ x: 0, y: 0 });
-    };
 
     return (
         <div className="pt-32 pb-24 bg-brand-bg min-h-screen">
@@ -61,20 +50,20 @@ const ProjectDetailPage = () => {
                     <div className="space-y-12">
                         <div 
                             className="enterprise-glass p-2 relative group overflow-hidden rounded-xl border-brand-accent/20 cursor-move"
-                            onMouseMove={handleMouseMove}
-                            onMouseLeave={handleMouseLeave}
                         >
                             <div className="aspect-video bg-white relative overflow-hidden rounded-lg">
                                 <Canvas camera={{ position: [0, 5, 10], fov: 45 }}>
-                                    <RobotModel mousePos={mousePos} />
+                                    <OrbitControls enableZoom={true} enablePan={true} autoRotate={true} autoRotateSpeed={1.5} />
+                                    <RobotModel />
                                 </Canvas>
                                 <div className="absolute inset-0 bg-blueprint opacity-5 pointer-events-none" />
                                 <div className="absolute top-4 left-4 px-3 py-1 bg-white/80 border border-brand-border rounded-full pointer-events-none">
                                     <span className="text-[10px] font-mono text-brand-bg tracking-widest uppercase font-bold">INTERACTIVE_3D_MODEL_V2.0</span>
                                 </div>
-                                <div className="absolute bottom-4 right-4 text-[10px] font-mono text-brand-bg/40 uppercase tracking-[0.2em] pointer-events-none font-bold">
-                                    Hover to Tilt
+                                <div className="absolute bottom-4 right-4 text-[10px] font-mono text-brand-bg/60 uppercase tracking-[0.2em] pointer-events-none font-bold text-right leading-tight">
+                                    Drag to Rotate<br/>Scroll to Zoom
                                 </div>
+
                             </div>
                         </div>
 

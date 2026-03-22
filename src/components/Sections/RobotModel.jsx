@@ -2,18 +2,13 @@ import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
-const RobotModel = ({ mousePos }) => {
+const RobotModel = () => {
     const groupRef = useRef();
     
-    // Smooth rotation logic
-    useFrame((state, delta) => {
+    // Subtle idle floating animation
+    useFrame((state) => {
         if (!groupRef.current) return;
-        
-        const targetRotationX = mousePos.y * 0.4;
-        const targetRotationY = mousePos.x * 0.4;
-        
-        groupRef.current.rotation.x = THREE.MathUtils.lerp(groupRef.current.rotation.x, targetRotationX, 0.1);
-        groupRef.current.rotation.y = THREE.MathUtils.lerp(groupRef.current.rotation.y, targetRotationY, 0.1);
+        groupRef.current.position.y = -0.5 + Math.sin(state.clock.elapsedTime * 2) * 0.05;
     });
 
     return (
