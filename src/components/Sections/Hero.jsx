@@ -7,13 +7,13 @@ const Hero = () => {
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrentSlide((prev) => (prev === 0 ? 1 : 0));
-        }, 3000); 
+        }, 3000);
         return () => clearInterval(timer);
     }, []);
 
     return (
         <section className="presentation-slide min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-brand-bg text-center">
-            
+
             {/* Clean dark background */}
 
             <div className="container mx-auto px-6 relative z-10 flex flex-col items-center">
@@ -29,7 +29,7 @@ const Hero = () => {
                         <div className="flex flex-col items-center w-full px-4 h-[100px] sm:h-[130px] md:h-[180px] lg:h-[220px] xl:h-[260px] relative overflow-hidden my-4">
                             <AnimatePresence>
                                 {currentSlide === 0 && (
-                                    <motion.h1 
+                                    <motion.h1
                                         key="slide1"
                                         initial={{ y: 50, opacity: 0 }}
                                         animate={{ y: 0, opacity: 1 }}
@@ -37,13 +37,16 @@ const Hero = () => {
                                         transition={{ duration: 0.6, ease: "easeInOut" }}
                                         className="absolute inset-0 flex flex-col items-center justify-center text-center font-black tracking-tighter uppercase leading-[1.1] w-full max-w-7xl mx-auto gap-3"
                                     >
-                                        <span className="text-color-flex whitespace-nowrap text-[3.8vw] sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl leading-[1.2]">
-                                            Start from zero in competitive robotics.
+                                        <span className="text-color-flex whitespace-nowrap text-[5vw] sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1]">
+                                            Start from zero in
+                                        </span>
+                                        <span className="text-color-flex whitespace-nowrap text-[5vw] sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1]">
+                                            competitive robotics.
                                         </span>
                                     </motion.h1>
                                 )}
                                 {currentSlide === 1 && (
-                                    <motion.h1 
+                                    <motion.h1
                                         key="slide2"
                                         initial={{ y: 50, opacity: 0 }}
                                         animate={{ y: 0, opacity: 1 }}
@@ -51,10 +54,10 @@ const Hero = () => {
                                         transition={{ duration: 0.6, ease: "easeInOut" }}
                                         className="absolute inset-0 flex flex-col items-center justify-center text-center font-black tracking-tighter uppercase leading-[1.1] w-full max-w-7xl mx-auto gap-3"
                                     >
-                                        <span className="text-color-flex whitespace-nowrap text-[3.8vw] sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl leading-[1.2]">
+                                        <span className="text-color-flex whitespace-nowrap text-[5vw] sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1]">
                                             Build your way to national and
                                         </span>
-                                        <span className="text-color-flex whitespace-nowrap text-[3.8vw] sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl leading-[1.2]">
+                                        <span className="text-color-flex whitespace-nowrap text-[5vw] sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1]">
                                             international competitions.
                                         </span>
                                     </motion.h1>
