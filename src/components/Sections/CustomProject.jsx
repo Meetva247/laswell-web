@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, Cpu, Layers, MousePointer2, Check } from 'lucide-react';
+import { Cpu, Layers, MousePointer2 } from 'lucide-react';
+import AnimatedSubmitButton from '../UI/AnimatedSubmitButton';
 
 const CustomProject = () => {
     const logos = ['LASWELL', 'INKVIBE', 'ROBOCON', 'STEELWORKS', 'NEURALINK', 'VORTEX'];
@@ -82,63 +83,7 @@ const CustomProject = () => {
                         </div>
 
                         <div className="flex justify-center w-full">
-                            <motion.button
-                                type="submit"
-                                animate={{
-                                    width: submitState === 'loading' ? '80%' : '100%',
-                                    backgroundColor: submitState === 'success' ? '#10B981' : '#00d8ff'
-                                }}
-                                transition={{ duration: 0.3, ease: "easeInOut" }}
-                                whileHover={submitState === 'idle' ? { scale: 1.02, boxShadow: "0 10px 30px -10px rgba(0, 216, 255, 0.5)" } : {}}
-                                whileTap={submitState === 'idle' ? { scale: 0.98 } : {}}
-                                className="h-[56px] w-full text-[#0a0a0a] font-bold uppercase tracking-widest flex items-center justify-center rounded-sm relative overflow-hidden"
-                            >
-                                <AnimatePresence>
-                                    {submitState === 'idle' && (
-                                        <motion.div
-                                            key="idle"
-                                            initial={{ y: 30, opacity: 0 }}
-                                            animate={{ y: 0, opacity: 1 }}
-                                            exit={{ y: -30, opacity: 0 }}
-                                            transition={{ duration: 0.3 }}
-                                            className="flex items-center gap-3 absolute"
-                                        >
-                                            Submit <Send size={16} />
-                                        </motion.div>
-                                    )}
-                                    {submitState === 'loading' && (
-                                        <motion.div
-                                            key="loading"
-                                            initial={{ y: 30, opacity: 0 }}
-                                            animate={{ y: 0, opacity: 1 }}
-                                            exit={{ y: -30, opacity: 0 }}
-                                            transition={{ duration: 0.3 }}
-                                            className="flex items-center gap-2 absolute"
-                                        >
-                                            {[...Array(3)].map((_, i) => (
-                                                <motion.span
-                                                    key={i}
-                                                    animate={{ y: [0, -6, 0] }}
-                                                    transition={{ repeat: Infinity, duration: 0.6, delay: i * 0.15 }}
-                                                    className="w-2 h-2 bg-[#0a0a0a] rounded-full block"
-                                                />
-                                            ))}
-                                        </motion.div>
-                                    )}
-                                    {submitState === 'success' && (
-                                        <motion.div
-                                            key="success"
-                                            initial={{ y: 30, opacity: 0 }}
-                                            animate={{ y: 0, opacity: 1 }}
-                                            exit={{ y: -30, opacity: 0 }}
-                                            transition={{ duration: 0.3 }}
-                                            className="flex items-center gap-3 absolute text-[#0a0a0a]"
-                                        >
-                                            Sent <Check size={18} />
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
-                            </motion.button>
+                            <AnimatedSubmitButton state={submitState} />
                         </div>
                     </form>
                 </motion.div>
