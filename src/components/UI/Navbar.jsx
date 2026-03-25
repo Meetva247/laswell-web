@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { MoreVertical, UserPlus, LogIn, LogOut, User } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
+import AnimMasterText from './AnimMasterText';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -65,9 +66,7 @@ const Navbar = () => {
             {/* Center: Logo */}
             <div className="absolute left-1/2 top-[22px] -translate-x-1/2 -translate-y-1/2 flex justify-center pointer-events-auto z-50">
                 <Link to="/" className="flex items-center gap-2">
-                    <span className="text-2xl md:text-3xl font-display font-bold text-brand-text tracking-tighter whitespace-nowrap uppercase">
-                        LASWELL ROBOTICS
-                    </span>
+                    <AnimMasterText text="LASWELL ROBOTICS" className="text-2xl md:text-3xl font-display font-bold text-brand-text tracking-tighter whitespace-nowrap uppercase" />
                 </Link>
             </div>
 
