@@ -30,7 +30,7 @@ const CustomProject = () => {
                 <div>
                     <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight text-brand-text">
                         Start a <br />
-                        <span className="text-brand-accent">Custom Project</span>
+                        <span className="text-neon-gradient">Custom Project</span>
                     </h2>
                     <p className="text-brand-muted mb-12 text-lg">
                         From industrial engineering to high-performance streetwear. Bring your most ambitious ideas to life with our precision design and manufacturing pipeline.
@@ -52,7 +52,7 @@ const CustomProject = () => {
                     </div>
                 </div>
 
-                <motion.div whileHover={{ scale: 1.02, borderColor: "var(--color-brand-accent)", boxShadow: "0 0 30px rgba(0,216,255,0.1)" }} className="bg-brand-secondary border border-brand-border p-8 md:p-12 relative rounded-sm overflow-hidden transition-all duration-300">
+                <motion.div whileHover={{ scale: 1.02, borderColor: "var(--color-brand-accent)", boxShadow: "0 0 30px rgba(0,216,255,0.1)" }} className="enterprise-glass p-8 md:p-12 relative rounded-sm overflow-hidden transition-all duration-300">
                     {/* Internal Corner Accents for technical depth */}
                     <div className="absolute top-0 left-0 w-8 h-8 border-t border-l border-brand-accent/40" />
                     <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-brand-accent/40" />

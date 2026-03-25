@@ -20,13 +20,13 @@
 }
 
 :root {
-  --bg-primary: #0A0A0A;
-  --bg-secondary: #111111;
+  --bg-primary: #030305;
+  --bg-secondary: #0A0A0F;
   --text-primary: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.6);
-  --border-primary: rgba(255, 255, 255, 0.1);
-  --glass-bg: rgba(10, 10, 10, 0.6);
-  --glass-frosted: rgba(30, 30, 30, 0.8);
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --border-primary: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(10, 10, 15, 0.35);
+  --glass-frosted: rgba(10, 10, 15, 0.55);
 }
 
 :root.light {
@@ -75,12 +75,22 @@
     border: 1px solid var(--border-primary);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.08);
     transition: all 0.3s ease;
   }
 
   .enterprise-glass:hover {
-    border-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(0, 216, 255, 0.4);
     background: var(--glass-frosted);
+    box-shadow: 0 8px 32px rgba(176, 38, 255, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  }
+
+  .text-neon-gradient {
+    background: linear-gradient(135deg, var(--color-brand-accent) 0%, var(--color-brand-purple) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 15px rgba(176, 38, 255, 0.3));
   }
 
   .scanline {

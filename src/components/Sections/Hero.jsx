@@ -77,7 +77,7 @@ const Hero = () => {
                     </p>
 
                     <div className="flex flex-wrap justify-center gap-6">
-                        <button className="px-8 py-3 bg-brand-accent text-[#0A0A0A] font-bold text-xs uppercase tracking-[0.1em] rounded-sm transition-all hover:brightness-110">
+                        <button className="px-8 py-3 bg-neon-gradient text-[#0A0A0A] font-bold text-xs uppercase tracking-[0.1em] rounded-sm transition-all hover:brightness-110">
                             EXPLORE SERVICES
                         </button>
                         <button className="px-8 py-3 bg-transparent border border-white/10 text-brand-text font-bold text-xs uppercase tracking-[0.1em] rounded-sm transition-all hover:bg-white/5">
