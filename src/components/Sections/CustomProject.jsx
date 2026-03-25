@@ -43,7 +43,7 @@ const CustomProject = () => {
                             { icon: MousePointer2, label: 'Custom Engraving & Aesthetic Tuning' }
                         ].map((item, i) => (
                             <div key={i} className="flex items-center gap-4">
-                                <div className="w-10 h-10 rounded-sm bg-brand-glass flex items-center justify-center text-brand-accent border border-brand-accent/20">
+                                <div className="w-10 h-10 rounded-none bg-brand-glass flex items-center justify-center text-brand-accent border border-brand-accent/20">
                                     <item.icon size={18} />
                                 </div>
                                 <span className="text-sm font-bold uppercase tracking-widest text-brand-text/80">{item.label}</span>
@@ -62,12 +62,12 @@ const CustomProject = () => {
                             <input
                                 type="text"
                                 placeholder="Laswell Commander"
-                                className="w-full bg-brand-bg border border-brand-border p-4 focus:border-brand-accent outline-none transition-colors text-brand-text placeholder:text-brand-text/30 rounded-sm"
+                                className="w-full bg-brand-bg border border-brand-border p-4 focus:border-white transition-colors text-brand-text placeholder:text-brand-text/30 rounded-none outline-none"
                             />
                         </div>
                         <div className="space-y-2">
                             <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-brand-text/50">Project Type</label>
-                            <select className="w-full bg-brand-bg border border-brand-border p-4 focus:border-brand-accent outline-none transition-colors text-brand-text rounded-sm appearance-none">
+                            <select className="w-full bg-brand-bg border border-brand-border p-4 focus:border-white transition-colors text-brand-text rounded-none appearance-none outline-none">
                                 <option className="bg-brand-bg">Robotics & Engineering</option>
                                 <option className="bg-brand-bg">Premium Streetwear</option>
                                 <option className="bg-brand-bg">Other Fusion</option>
@@ -78,7 +78,7 @@ const CustomProject = () => {
                             <textarea
                                 rows="4"
                                 placeholder="Tell us about the mission..."
-                                className="w-full bg-brand-bg border border-brand-border p-4 focus:border-brand-accent outline-none transition-colors text-brand-text placeholder:text-brand-text/30 rounded-sm resize-none"
+                                className="w-full bg-brand-bg border border-brand-border p-4 focus:border-white transition-colors text-brand-text placeholder:text-brand-text/30 rounded-none resize-none outline-none"
                             ></textarea>
                         </div>
 

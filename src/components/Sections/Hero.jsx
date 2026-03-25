@@ -12,9 +12,13 @@ const Hero = () => {
     }, []);
 
     return (
-        <section className="presentation-slide min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-brand-bg text-center">
-
-            {/* Clean dark background */}
+        <section className="presentation-slide min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-black text-center relative border-b border-[#333333]">
+            
+            {/* Brutalist Engineering Crosshairs [+] */}
+            <div className="absolute top-6 left-6 w-4 h-4 border-t-2 border-l-2 border-[#555] opacity-80" />
+            <div className="absolute top-6 right-6 w-4 h-4 border-t-2 border-r-2 border-[#555] opacity-80" />
+            <div className="absolute bottom-6 left-6 w-4 h-4 border-b-2 border-l-2 border-[#555] opacity-80" />
+            <div className="absolute bottom-6 right-6 w-4 h-4 border-b-2 border-r-2 border-[#555] opacity-80" />
 
             <div className="container mx-auto px-6 relative z-10 flex flex-col items-center">
 
@@ -66,28 +70,28 @@ const Hero = () => {
                         </div>
                     </div>
 
-                    <div className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-8">
-                        <span className="text-[#9DB2FF] bg-gradient-to-r from-[#00D8FF] to-[#B026FF] bg-clip-text text-transparent">
-                            Join the Robotics Revolution
+                    <div className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-8 border-y-2 border-white py-4 w-[110%] -ml-[5%]">
+                        <span className="text-white tracking-widest">
+                            JOIN THE HARDWARE REVOLUTION
                         </span>
                     </div>
 
-                    <p className="font-mono text-brand-text/60 text-xs md:text-sm tracking-widest uppercase mb-12 font-bold max-w-2xl text-center">
-                        PROFESSIONAL MANUFACTURING SOLUTIONS FOR YOUR NEXT INNOVATION
+                    <p className="font-mono text-[#888888] text-xs md:text-sm tracking-[0.2em] uppercase my-12 font-bold max-w-2xl text-center">
+                        [CLASSIFIED] HARDWARE MANUFACTURING SCHEMATICS // LEVEL 04
                     </p>
 
-                    <div className="flex flex-wrap justify-center gap-6">
-                        <button className="px-8 py-3 bg-neon-gradient text-[#0A0A0A] font-bold text-xs uppercase tracking-[0.1em] rounded-sm transition-all hover:brightness-110">
+                    <div className="flex flex-wrap justify-center gap-6 w-full">
+                        <button className="px-8 py-4 bg-white text-black font-bold text-xs uppercase tracking-[0.2em] rounded-none transition-all hover:bg-[#aaaaaa] border-2 border-white">
                             EXPLORE SERVICES
                         </button>
-                        <button className="px-8 py-3 bg-transparent border border-white/10 text-brand-text font-bold text-xs uppercase tracking-[0.1em] rounded-sm transition-all hover:bg-white/5">
+                        <button className="px-8 py-4 bg-black border-2 border-white text-white font-bold text-xs uppercase tracking-[0.2em] rounded-none transition-all hover:bg-white hover:text-black">
                             REQUEST A QUOTE
                         </button>
                     </div>
                 </motion.div>
 
-                {/* Optional dark gradient placeholder at the bottom representing the edge of the next section */}
-                <div className="absolute bottom-[-100px] w-full max-w-3xl h-[200px] bg-brand-purple/20 blur-[100px] rounded-[100%] pointer-events-none z-0"></div>
+                {/* Brutalist Grid Background Overlay */}
+                <div className="absolute inset-0 pointer-events-none z-[-1]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
             </div>
 
         </section>

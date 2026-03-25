@@ -5,10 +5,10 @@
   --color-brand-bg: var(--bg-primary);
   --color-brand-text: var(--text-primary);
   --color-brand-text-muted: var(--text-secondary);
-  --color-brand-accent: #00D8FF;
-  --color-brand-purple: #B026FF;
+  --color-brand-accent: #ffffff;
+  --color-brand-purple: #ffffff;
   --color-brand-secondary: var(--bg-secondary);
-  --color-brand-cyan-muted: rgba(0, 216, 255, 0.2);
+  --color-brand-cyan-muted: rgba(255, 255, 255, 0.1);
 
   --color-brand-glass: var(--glass-bg);
   --color-brand-border: var(--border-primary);
@@ -20,13 +20,13 @@
 }
 
 :root {
-  --bg-primary: #030305;
-  --bg-secondary: #0A0A0F;
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
   --text-primary: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-primary: rgba(255, 255, 255, 0.08);
-  --glass-bg: rgba(10, 10, 15, 0.35);
-  --glass-frosted: rgba(10, 10, 15, 0.55);
+  --text-secondary: #888888;
+  --border-primary: #333333;
+  --glass-bg: #000000;
+  --glass-frosted: #111111;
 }
 
 :root.light {
@@ -71,26 +71,19 @@
 
 @layer utilities {
   .enterprise-glass {
-    background: var(--glass-bg);
-    border: 1px solid var(--border-primary);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+    background: #000000;
+    border: 1px solid #333333;
+    border-radius: 0;
     transition: all 0.3s ease;
   }
 
   .enterprise-glass:hover {
-    border-color: rgba(0, 216, 255, 0.4);
-    background: var(--glass-frosted);
-    box-shadow: 0 8px 32px rgba(176, 38, 255, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+    border-color: #ffffff;
+    background: #111111;
   }
 
   .text-neon-gradient {
-    background: linear-gradient(135deg, var(--color-brand-accent) 0%, var(--color-brand-purple) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 15px rgba(176, 38, 255, 0.3));
+    color: #ffffff;
   }
 
   .scanline {
