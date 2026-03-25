@@ -26,21 +26,21 @@ const Hero = () => {
                     className="max-w-5xl mx-auto flex flex-col items-center cursor-default group"
                 >
                     <div className="flex flex-col items-center gap-2 md:gap-4 py-10 w-full">
-                        <div className="flex flex-col items-center w-full px-4 h-[120px] sm:h-[180px] md:h-[240px] lg:h-[300px] xl:h-[350px] relative overflow-hidden my-4">
+                        <div className="flex flex-col items-center w-full px-4 h-[80px] sm:h-[120px] md:h-[150px] lg:h-[200px] xl:h-[220px] relative overflow-hidden my-4">
                             <AnimatePresence>
                                 {currentSlide === 0 && (
                                     <motion.h1 
                                         key="slide1"
-                                        initial={{ y: 50, opacity: 0 }}
+                                        initial={{ y: '100%', opacity: 0 }}
                                         animate={{ y: 0, opacity: 1 }}
-                                        exit={{ y: -50, opacity: 0 }}
+                                        exit={{ y: '-100%', opacity: 0 }}
                                         transition={{ duration: 0.6, ease: "easeInOut" }}
-                                        className="absolute inset-0 flex flex-col items-center justify-center text-center font-black tracking-tighter uppercase leading-[1.1] w-full max-w-7xl mx-auto gap-3"
+                                        className="absolute inset-0 flex flex-col items-center justify-center text-center font-black tracking-tighter uppercase leading-[1.1] w-full max-w-7xl mx-auto gap-2"
                                     >
-                                        <span className="text-color-flex whitespace-nowrap text-[3.5vw] sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[52px] leading-[1.2] w-full">
+                                        <span className="text-color-flex whitespace-nowrap text-[3vw] sm:text-xl md:text-2xl lg:text-3xl xl:text-[40px] leading-[1.2] w-full">
                                             Start from zero in
                                         </span>
-                                        <span className="text-color-flex whitespace-nowrap text-[3.5vw] sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[52px] leading-[1.2] w-full">
+                                        <span className="text-color-flex whitespace-nowrap text-[3vw] sm:text-xl md:text-2xl lg:text-3xl xl:text-[40px] leading-[1.2] w-full">
                                             competitive robotics.
                                         </span>
                                     </motion.h1>
@@ -48,16 +48,16 @@ const Hero = () => {
                                 {currentSlide === 1 && (
                                     <motion.h1 
                                         key="slide2"
-                                        initial={{ y: 50, opacity: 0 }}
+                                        initial={{ y: '100%', opacity: 0 }}
                                         animate={{ y: 0, opacity: 1 }}
-                                        exit={{ y: -50, opacity: 0 }}
+                                        exit={{ y: '-100%', opacity: 0 }}
                                         transition={{ duration: 0.6, ease: "easeInOut" }}
-                                        className="absolute inset-0 flex flex-col items-center justify-center text-center font-black tracking-tighter uppercase leading-[1.1] w-full max-w-7xl mx-auto gap-3"
+                                        className="absolute inset-0 flex flex-col items-center justify-center text-center font-black tracking-tighter uppercase leading-[1.1] w-full max-w-7xl mx-auto gap-2"
                                     >
-                                        <span className="text-color-flex whitespace-nowrap text-[3.5vw] sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[52px] leading-[1.2] w-full">
+                                        <span className="text-color-flex whitespace-nowrap text-[3vw] sm:text-xl md:text-2xl lg:text-3xl xl:text-[40px] leading-[1.2] w-full">
                                             Build your way to national and
                                         </span>
-                                        <span className="text-color-flex whitespace-nowrap text-[3.5vw] sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[52px] leading-[1.2] w-full">
+                                        <span className="text-color-flex whitespace-nowrap text-[3vw] sm:text-xl md:text-2xl lg:text-3xl xl:text-[40px] leading-[1.2] w-full">
                                             international competitions.
                                         </span>
                                     </motion.h1>
