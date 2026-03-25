@@ -71,7 +71,7 @@ const CustomProject = () => {
                             whileTap={{ scale: 0.98 }}
                             className="w-full py-4 bg-brand-accent text-brand-bg font-bold uppercase tracking-widest flex items-center justify-center gap-3 rounded-sm"
                         >
-                            Initiate Transmission <Send size={16} />
+                            Submit <Send size={16} />
                         </motion.button>
                     </form>
                 </motion.div>
